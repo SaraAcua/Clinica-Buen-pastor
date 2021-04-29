@@ -328,52 +328,9 @@
         <!-- ============================================================== -->
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
-        <aside class="left-sidebar">
-            <!-- Sidebar scroll-->
-            <div class="scroll-sidebar">
-                <!-- Sidebar navigation-->
-                <nav class="sidebar-nav">
-                    <ul id="sidebarnav">
-                        <li class="nav-small-cap">--- Administrador</li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="icon-Car-Wheel"></i><span class="hide-menu">Dashboard <span class="label label-rounded label-danger">4</span></span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="form-citas.html">Gestion de citas </a></li>
-                                <li><a href="table-citas.html">Listado de citas </a></li>
-                               
-                            </ul>
-                        </li>
-                       
-                        
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="icon-Receipt-4"></i><span class="hide-menu">Pacientes</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                
-                                <li><a href="form-layout.html">Registrar</a></li>
-                                <li><a href="table-footable.html">Listado</a></li>
-                               
-                            </ul>
-                        </li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="icon-Receipt-4"></i><span class="hide-menu">Personal</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                
-                                <li><a href="form-personal.html">Registrar</a></li>
-                                <li><a href="table-personal.html">Listado</a></li>
-                               
-                            </ul>
-                        </li>
-                       
-                       
-                      
-                       
-                       
-                              
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-                <!-- End Sidebar navigation -->
-            </div>
-            <!-- End Sidebar scroll-->
-        </aside>
+        <?php 
+         include 'Include/sidebar_admin.php';
+        ?>
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
