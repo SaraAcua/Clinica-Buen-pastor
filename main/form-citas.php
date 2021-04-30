@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
-    <title>AdminWrap - Easy to Customize Bootstrap 4 Admin Template</title>
+    <title>Clinica buen pastor - Easy to Customize Bootstrap 4 Admin Template</title>
     <!-- Bootstrap Core CSS -->
     <link href="../assets/node_modules/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/node_modules/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
