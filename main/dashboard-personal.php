@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
-    <title>AdminWrap - Easy to Customize Bootstrap 4 Admin Template</title>
+    <title>Clinica - Easy to Customize Bootstrap 4 Admin Template</title>
     <!-- Bootstrap Core CSS -->
     <link href="../assets/node_modules/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/node_modules/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
@@ -58,7 +58,7 @@
                 <!-- Logo -->
                 <!-- ============================================================== -->
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="dashboard.php">
                         <!-- Logo icon --><b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
@@ -68,12 +68,10 @@
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text --><span>
-                            <!-- dark Logo text -->
-                            <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
-                            <!-- Light Logo text -->
-                            <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
-                        </span>
-                    </a>
+                         <!-- dark Logo text -->
+                         <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                         <!-- Light Logo text -->    
+                         <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Logo -->
@@ -91,8 +89,7 @@
                         <!-- ============================================================== -->
                         <li class="nav-item hidden-xs-down search-box"> <a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="icon-Magnifi-Glass2"></i></a>
                             <form class="app-search">
-                                <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a>
-                            </form>
+                                <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
                         </li>
                     </ul>
                     <!-- ============================================================== -->
@@ -117,29 +114,25 @@
                                             <a href="#">
                                                 <div class="btn btn-danger btn-circle"><i class="fa fa-link"></i></div>
                                                 <div class="mail-contnet">
-                                                    <h5>Luanch Admin</h5> <span class="mail-desc">Just see the my new admin!</span> <span class="time">9:30 AM</span>
-                                                </div>
+                                                    <h5>Luanch Admin</h5> <span class="mail-desc">Just see the my new admin!</span> <span class="time">9:30 AM</span> </div>
                                             </a>
                                             <!-- Message -->
                                             <a href="#">
                                                 <div class="btn btn-success btn-circle"><i class="ti-calendar"></i></div>
                                                 <div class="mail-contnet">
-                                                    <h5>Event today</h5> <span class="mail-desc">Just a reminder that you have event</span> <span class="time">9:10 AM</span>
-                                                </div>
+                                                    <h5>Event today</h5> <span class="mail-desc">Just a reminder that you have event</span> <span class="time">9:10 AM</span> </div>
                                             </a>
                                             <!-- Message -->
                                             <a href="#">
                                                 <div class="btn btn-info btn-circle"><i class="ti-settings"></i></div>
                                                 <div class="mail-contnet">
-                                                    <h5>Settings</h5> <span class="mail-desc">You can customize this template as you want</span> <span class="time">9:08 AM</span>
-                                                </div>
+                                                    <h5>Settings</h5> <span class="mail-desc">You can customize this template as you want</span> <span class="time">9:08 AM</span> </div>
                                             </a>
                                             <!-- Message -->
                                             <a href="#">
                                                 <div class="btn btn-primary btn-circle"><i class="ti-user"></i></div>
                                                 <div class="mail-contnet">
-                                                    <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span>
-                                                </div>
+                                                    <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span> </div>
                                             </a>
                                         </div>
                                     </li>
@@ -170,29 +163,25 @@
                                             <a href="#">
                                                 <div class="user-img"> <img src="../assets/images/users/1.jpg" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
                                                 <div class="mail-contnet">
-                                                    <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:30 AM</span>
-                                                </div>
+                                                    <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:30 AM</span> </div>
                                             </a>
                                             <!-- Message -->
                                             <a href="#">
                                                 <div class="user-img"> <img src="../assets/images/users/2.jpg" alt="user" class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
                                                 <div class="mail-contnet">
-                                                    <h5>Sonu Nigam</h5> <span class="mail-desc">I've sung a song! See you at</span> <span class="time">9:10 AM</span>
-                                                </div>
+                                                    <h5>Sonu Nigam</h5> <span class="mail-desc">I've sung a song! See you at</span> <span class="time">9:10 AM</span> </div>
                                             </a>
                                             <!-- Message -->
                                             <a href="#">
                                                 <div class="user-img"> <img src="../assets/images/users/3.jpg" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
                                                 <div class="mail-contnet">
-                                                    <h5>Arijit Sinh</h5> <span class="mail-desc">I am a singer!</span> <span class="time">9:08 AM</span>
-                                                </div>
+                                                    <h5>Arijit Sinh</h5> <span class="mail-desc">I am a singer!</span> <span class="time">9:08 AM</span> </div>
                                             </a>
                                             <!-- Message -->
                                             <a href="#">
                                                 <div class="user-img"> <img src="../assets/images/users/4.jpg" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
                                                 <div class="mail-contnet">
-                                                    <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span>
-                                                </div>
+                                                    <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span> </div>
                                             </a>
                                         </div>
                                     </li>
@@ -238,11 +227,10 @@
                                             <div class="card">
                                                 <div class="card-header" role="tab" id="headingOne">
                                                     <h5 class="mb-0">
-                                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                            Collapsible Group Item #1
-                                                        </a>
-                                                    </h5>
-                                                </div>
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                  Collapsible Group Item #1
+                                                </a>
+                                              </h5> </div>
                                                 <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
                                                     <div class="card-body"> Anim pariatur cliche reprehenderit, enim eiusmod high. </div>
                                                 </div>
@@ -250,11 +238,10 @@
                                             <div class="card">
                                                 <div class="card-header" role="tab" id="headingTwo">
                                                     <h5 class="mb-0">
-                                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                            Collapsible Group Item #2
-                                                        </a>
-                                                    </h5>
-                                                </div>
+                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                  Collapsible Group Item #2
+                                                </a>
+                                              </h5> </div>
                                                 <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
                                                     <div class="card-body"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. </div>
                                                 </div>
@@ -262,11 +249,10 @@
                                             <div class="card">
                                                 <div class="card-header" role="tab" id="headingThree">
                                                     <h5 class="mb-0">
-                                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                            Collapsible Group Item #3
-                                                        </a>
-                                                    </h5>
-                                                </div>
+                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                  Collapsible Group Item #3
+                                                </a>
+                                              </h5> </div>
                                                 <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
                                                     <div class="card-body"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. </div>
                                                 </div>
@@ -278,11 +264,9 @@
                                         <!-- Contact -->
                                         <form>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="exampleInputname1" placeholder="Enter Name">
-                                            </div>
+                                                <input type="text" class="form-control" id="exampleInputname1" placeholder="Enter Name"> </div>
                                             <div class="form-group">
-                                                <input type="email" class="form-control" placeholder="Enter email">
-                                            </div>
+                                                <input type="email" class="form-control" placeholder="Enter email"> </div>
                                             <div class="form-group">
                                                 <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Message"></textarea>
                                             </div>
@@ -325,8 +309,7 @@
                                             <div class="u-img"><img src="../assets/images/users/1.jpg" alt="user"></div>
                                             <div class="u-text">
                                                 <h4>Steave Jobs</h4>
-                                                <p class="text-muted">varun@gmail.com</p><a href="pages-profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
-                                            </div>
+                                                <p class="text-muted">varun@gmail.com</p><a href="pages-profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
                                         </div>
                                     </li>
                                     <li role="separator" class="divider"></li>
@@ -350,8 +333,8 @@
         <!-- ============================================================== -->
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
-        <?php
-        include 'Include/sidebar_admin.php';
+        <?php 
+         include 'Include/sidebar_personal.php';
         ?>
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
@@ -369,14 +352,14 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text-themecolor">Resgistrar personal</h3>
+                        <h3 class="text-themecolor">Dashboard </h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Resgistrar personal</li>
+                            <li class="breadcrumb-item active">Dashboard </li>
                         </ol>
                     </div>
                     <div class="col-md-7 align-self-center text-right d-none d-md-block">
-                        <button type="button" class="btn btn-info"><i class="fa fa-plus-circle"></i> Crear nuevo</button>
+                        <button type="button" class="btn btn-info"><i class="fa fa-plus-circle"></i> Create New</button>
                     </div>
                     <div class="">
                         <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
@@ -386,209 +369,339 @@
                 <!-- End Bread crumb and right sidebar toggle -->
                 <!-- ============================================================== -->
                 <!-- ============================================================== -->
-                <!-- Start Page Content -->
+                <!-- Info box -->
                 <!-- ============================================================== -->
-                <!-- Row -->
                 <div class="row">
-                    <div class="col-lg-12">
+                    <!-- Column -->
+                    <div class="col-lg-3 col-md-6">
                         <div class="card">
-                            <div class="card-header bg-info">
-                                <h4 class="m-b-0 text-white">Formulario de registro</h4>
-                            </div>
                             <div class="card-body">
-                                <form action="#">
-                                    <div class="form-body">
-                                        <h3 class="card-title">Informacion del personal</h3>
-                                        <hr>
-                                        <div class="row p-t-20">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="control-label">Foto</label>
-                                                    <input type="imput" id="fotopaciente" class="form-control" placeholder="foto paciente">
-                                                    <small class="form-control-feedback"> This is inline help </small>
-                                                </div>
-                                            </div>
-                                            <!--/span-->
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="control-label">Nombre</label>
-                                                    <input type="text" id="firstName" class="form-control" placeholder="nombre">
-                                                    <small class="form-control-feedback"> This field has error. </small>
-                                                </div>
-                                            </div>
-                                            <!--/span-->
-                                            <!--/span-->
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="control-label">Apellido</label>
-                                                    <input type="text" id="lasttName" class="form-control" placeholder="apellido">
-                                                    <small class="form-control-feedback"> This field has error. </small>
-                                                </div>
-                                            </div>
-
-
-                                            
-
-                                            <div class="col-md-6">
-                                                <div class="form-group ">
-                                                    <label class="control-label text-right">Tipo</label>
-                                                    <div class="col-md-9">
-                                                        <select class="form-control custom-select">
-                                                            <option> Seleccione</option>
-                                                            <option> Medico</option>
-                                                            <option> Enfermera</option>
-                                                            <option> Fisioterapeuta</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                             
-                                            <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="control-label">Trabjando</label>
-                                                <div class="custom-control custom-radio">
-                                                    <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                                                    <label class="custom-control-label" for="customRadio1">En servicio</label>
-                                                </div>
-                                                <div class="custom-control custom-radio">
-                                                    <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                                                    <label class="custom-control-label" for="customRadio2">Libre</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                            
-                                            <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="control-label">Estado</label>
-                                                <div class="custom-control custom-radio">
-                                                    <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                                                    <label class="custom-control-label" for="customRadio1">Activo</label>
-                                                </div>
-                                                <div class="custom-control custom-radio">
-                                                    <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                                                    <label class="custom-control-label" for="customRadio2">Inactivo</label>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                            <!--/span-->
-                                        </div>
-                                        <!--/row-->
-                                       
-                                        <!--/row-->
-
-                                        <!--/span-->
-                                       
-                                        <!--/span-->
+                                <div class="d-flex p-10 no-block">
+                                    <div class="align-slef-center">
+                                        <h2 class="m-b-0">234</h2>
+                                        <h6 class="text-muted m-b-0">Nuevos pacientes</h6>
                                     </div>
-                                    <!--/row-->
-                                   
-                                 
-                                   
-                               
+                                    <div class="align-self-center display-6 ml-auto"><i class="text-success icon-Target-Market"></i></div>
+                                </div>
                             </div>
-                            <div class="form-actions">
-                                <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> guardar</button>
-                                <button type="button" class="btn btn-inverse">Cancel</button>
+                            <div class="progress">
+                                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:70%; height:3px;"> <span class="sr-only">50% Complete</span></div>
                             </div>
-                            </form>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex p-10 no-block">
+                                    <div class="align-slef-center">
+                                        <h2 class="m-b-0">$6,759</h2>
+                                        <h6 class="text-muted m-b-0">This Week</h6>
+                                    </div>
+                                    <div class="align-self-center display-6 ml-auto"><i class="text-info icon-Dollar-Sign"></i></div>
+                                </div>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar bg-info" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:70%; height:3px;"> <span class="sr-only">50% Complete</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex p-10 no-block">
+                                    <div class="align-slef-center">
+                                        <h2 class="m-b-0">2,356</h2>
+                                        <h6 class="text-muted m-b-0">Emails Sent</h6>
+                                    </div>
+                                    <div class="align-self-center display-6 ml-auto"><i class="text-primary icon-Inbox-Forward"></i></div>
+                                </div>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:70%; height:3px;"> <span class="sr-only">50% Complete</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex p-10 no-block">
+                                    <div class="align-slef-center">
+                                        <h2 class="m-b-0">38</h2>
+                                        <h6 class="text-muted m-b-0">Deals in Pipeline</h6>
+                                    </div>
+                                    <div class="align-self-center display-6 ml-auto"><i class="text-danger icon-Contrast"></i></div>
+                                </div>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:70%; height:3px;"> <span class="sr-only">50% Complete</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Info box -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Over Visitor, Our income , slaes different and  sales prediction -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-4 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex m-b-30 no-block">
+                                    <h5 class="card-title m-b-0 align-self-center">Our Visitors</h5>
+                                    <div class="ml-auto">
+                                        <select class="custom-select b-0">
+                                            <option selected="">Today</option>
+                                            <option value="1">Tomorrow</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="visitor" style="height:260px; width:100%;"></div>
+                                <ul class="list-inline m-t-30 text-center font-12">
+                                    <li><i class="fa fa-circle text-purple"></i> Tablet</li>
+                                    <li><i class="fa fa-circle text-success"></i> Desktops</li>
+                                    <li><i class="fa fa-circle text-info"></i> Mobile</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <div class="col-lg-4 col-md-12">
+                        <div class="card o-income">
+                            <div class="card-body">
+                                <div class="d-flex m-b-30 no-block">
+                                    <h5 class="card-title m-b-0 align-self-center">Our Income</h5>
+                                    <div class="ml-auto">
+                                        <select class="custom-select b-0">
+                                            <option selected="">January</option>
+                                            <option value="1">February</option>
+                                            <option value="2">March</option>
+                                            <option value="3">April</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="income" style="height:260px; width:100%;"></div>
+                                <ul class="list-inline m-t-30 text-center font-12">
+                                    <li><i class="fa fa-circle text-success"></i> Growth</li>
+                                    <li><i class="fa fa-circle text-info"></i> Net</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <div class="col-lg-4 col-md-12">
+                        <div class="row">
+                            <!-- Column -->
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Sales Difference</h5>
+                                        <div class="d-flex no-block">
+                                            <div class="align-self-center no-shrink">
+                                                <h2 class="m-b-0">$4316</h2>
+                                                <h6 class="text-muted">(150-165 Sales)</h6>
+                                            </div>
+                                            <div class="ml-auto">
+                                                <div id="sales" class="" style=" width:150px; height:140px;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Column -->
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Sales Prediction</h5>
+                                        <div class="d-flex no-block">
+                                            <div class="align-self-end no-shrink">
+                                                <h2 class="m-b-0">$3528</h2>
+                                                <h6 class="text-muted">(150-165 Sales)</h6>
+                                            </div>
+                                            <div class="ml-auto">
+                                                <div id="prediction"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Column -->
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Row -->
-            <!-- Row -->
-
-
-
-
-
-
-
-
-
-            <!-- Row -->
-            <!-- Row -->
-
-
-            <!-- Row -->
-            <!-- ============================================================== -->
-            <!-- End PAge Content -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- Right sidebar -->
-            <!-- ============================================================== -->
-            <!-- .right-sidebar -->
-            <div class="right-sidebar">
-                <div class="slimscrollright">
-                    <div class="rpanel-title"> Service Panel <span><i class="ti-close right-side-toggle"></i></span> </div>
-                    <div class="r-panel-body">
-                        <ul id="themecolors" class="m-t-20">
-                            <li><b>With Light sidebar</b></li>
-                            <li><a href="javascript:void(0)" data-theme="default" class="default-theme">1</a></li>
-                            <li><a href="javascript:void(0)" data-theme="green" class="green-theme">2</a></li>
-                            <li><a href="javascript:void(0)" data-theme="red" class="red-theme">3</a></li>
-                            <li><a href="javascript:void(0)" data-theme="blue" class="blue-theme">4</a></li>
-                            <li><a href="javascript:void(0)" data-theme="purple" class="purple-theme">5</a></li>
-                            <li><a href="javascript:void(0)" data-theme="megna" class="megna-theme">6</a></li>
-                            <li class="d-block m-t-30"><b>With Dark sidebar</b></li>
-                            <li><a href="javascript:void(0)" data-theme="default-dark" class="default-dark-theme working">7</a></li>
-                            <li><a href="javascript:void(0)" data-theme="green-dark" class="green-dark-theme">8</a></li>
-                            <li><a href="javascript:void(0)" data-theme="red-dark" class="red-dark-theme">9</a></li>
-                            <li><a href="javascript:void(0)" data-theme="blue-dark" class="blue-dark-theme">10</a></li>
-                            <li><a href="javascript:void(0)" data-theme="purple-dark" class="purple-dark-theme">11</a></li>
-                            <li><a href="javascript:void(0)" data-theme="megna-dark" class="megna-dark-theme ">12</a></li>
-                        </ul>
-                        <ul class="m-t-20 chatonline">
-                            <li><b>Chat option</b></li>
-                            <li>
-                                <a href="javascript:void(0)"><img src="../assets/images/users/1.jpg" alt="user-img" class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"><img src="../assets/images/users/2.jpg" alt="user-img" class="img-circle"> <span>Genelia Deshmukh <small class="text-warning">Away</small></span></a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"><img src="../assets/images/users/3.jpg" alt="user-img" class="img-circle"> <span>Ritesh Deshmukh <small class="text-danger">Busy</small></span></a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"><img src="../assets/images/users/4.jpg" alt="user-img" class="img-circle"> <span>Arijit Sinh <small class="text-muted">Offline</small></span></a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"><img src="../assets/images/users/5.jpg" alt="user-img" class="img-circle"> <span>Govinda Star <small class="text-success">online</small></span></a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"><img src="../assets/images/users/6.jpg" alt="user-img" class="img-circle"> <span>John Abraham<small class="text-success">online</small></span></a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"><img src="../assets/images/users/7.jpg" alt="user-img" class="img-circle"> <span>Hritik Roshan<small class="text-success">online</small></span></a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"><img src="../assets/images/users/8.jpg" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="text-success">online</small></span></a>
-                            </li>
-                        </ul>
+                <!-- ============================================================== -->
+                <!-- Sales Chart and browser state-->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex no-block">
+                                    <div>
+                                        <h5 class="card-title m-b-0">Sales Chart</h5>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <ul class="list-inline text-center font-12">
+                                            <li><i class="fa fa-circle text-success"></i> SITE A</li>
+                                            <li><i class="fa fa-circle text-info"></i> SITE B</li>
+                                            <li><i class="fa fa-circle text-primary"></i> SITE C</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="" id="sales-chart" style="height: 355px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Browser Stats</h5>
+                                <table class="table browser m-t-30 no-border">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width:40px"><img src="../assets/images/browser/chrome-logo.png" alt="logo"></td>
+                                            <td>Google Chrome</td>
+                                            <td class="text-right">23%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="../assets/images/browser/firefox-logo.png" alt="logo"></td>
+                                            <td>Mozila Firefox</td>
+                                            <td class="text-right">15%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="../assets/images/browser/safari-logo.png" alt="logo"></td>
+                                            <td>Apple Safari</td>
+                                            <td class="text-right">07%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="../assets/images/browser/internet-logo.png" alt="logo"></td>
+                                            <td>Internet Explorer</td>
+                                            <td class="text-right">09%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="../assets/images/browser/opera-logo.png" alt="logo"></td>
+                                            <td>Opera mini</td>
+                                            <td class="text-right">23%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="../assets/images/browser/netscape-logo.png" alt="logo"></td>
+                                            <td>Netscape Navigator</td>
+                                            <td class="text-right">04%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <!-- ============================================================== -->
+                <!-- End Sales Chart -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Projects of the Month -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div>
+                                        <h5 class="card-title">Projects of the Month</h5>
+                                    </div>
+                                    
+                                
+                    </div>
+                    <!-- Column -->
+                   
+                           
+                                <!-- Comment Row -->
+                               
+                       
+                                            
+                                        <!--chat Row -->
+              
+                <!-- .right-sidebar -->
+                <div class="right-sidebar">
+                    <div class="slimscrollright">
+                        <div class="rpanel-title"> Service Panel <span><i class="ti-close right-side-toggle"></i></span> </div>
+                        <div class="r-panel-body">
+                            <ul id="themecolors" class="m-t-20">
+                                <li><b>With Light sidebar</b></li>
+                                <li><a href="javascript:void(0)" data-theme="default" class="default-theme">1</a></li>
+                                <li><a href="javascript:void(0)" data-theme="green" class="green-theme">2</a></li>
+                                <li><a href="javascript:void(0)" data-theme="red" class="red-theme">3</a></li>
+                                <li><a href="javascript:void(0)" data-theme="blue" class="blue-theme">4</a></li>
+                                <li><a href="javascript:void(0)" data-theme="purple" class="purple-theme">5</a></li>
+                                <li><a href="javascript:void(0)" data-theme="megna" class="megna-theme">6</a></li>
+                                <li class="d-block m-t-30"><b>With Dark sidebar</b></li>
+                                <li><a href="javascript:void(0)" data-theme="default-dark" class="default-dark-theme working">7</a></li>
+                                <li><a href="javascript:void(0)" data-theme="green-dark" class="green-dark-theme">8</a></li>
+                                <li><a href="javascript:void(0)" data-theme="red-dark" class="red-dark-theme">9</a></li>
+                                <li><a href="javascript:void(0)" data-theme="blue-dark" class="blue-dark-theme">10</a></li>
+                                <li><a href="javascript:void(0)" data-theme="purple-dark" class="purple-dark-theme">11</a></li>
+                                <li><a href="javascript:void(0)" data-theme="megna-dark" class="megna-dark-theme ">12</a></li>
+                            </ul>
+                            <ul class="m-t-20 chatonline">
+                                <li><b>Chat option</b></li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../assets/images/users/1.jpg" alt="user-img" class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../assets/images/users/2.jpg" alt="user-img" class="img-circle"> <span>Genelia Deshmukh <small class="text-warning">Away</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../assets/images/users/3.jpg" alt="user-img" class="img-circle"> <span>Ritesh Deshmukh <small class="text-danger">Busy</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../assets/images/users/4.jpg" alt="user-img" class="img-circle"> <span>Arijit Sinh <small class="text-muted">Offline</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../assets/images/users/5.jpg" alt="user-img" class="img-circle"> <span>Govinda Star <small class="text-success">online</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../assets/images/users/6.jpg" alt="user-img" class="img-circle"> <span>John Abraham<small class="text-success">online</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../assets/images/users/7.jpg" alt="user-img" class="img-circle"> <span>Hritik Roshan<small class="text-success">online</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../assets/images/users/8.jpg" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="text-success">online</small></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Right sidebar -->
+                <!-- ============================================================== -->
             </div>
             <!-- ============================================================== -->
-            <!-- End Right sidebar -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer"> © 2021 Sara Acuña </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
             <!-- ============================================================== -->
         </div>
         <!-- ============================================================== -->
-        <!-- End Container fluid  -->
+        <!-- End Page wrapper  -->
         <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- footer -->
-        <!-- ============================================================== -->
-        <footer class="footer">
-            © 2021 Sara Katerin Acuña
-        </footer>
-        <!-- ============================================================== -->
-        <!-- End footer -->
-        <!-- ============================================================== -->
-    </div>
-    <!-- ============================================================== -->
-    <!-- End Page wrapper  -->
-    <!-- ============================================================== -->
     </div>
     <!-- ============================================================== -->
     <!-- End Wrapper -->
@@ -597,7 +710,7 @@
     <!-- All Jquery -->
     <!-- ============================================================== -->
     <script src="../assets/node_modules/jquery/jquery.min.js"></script>
-    <!-- Bootstrap tether Core JavaScript -->
+    <!-- Bootstrap popper Core JavaScript -->
     <script src="../assets/node_modules/bootstrap/js/popper.min.js"></script>
     <script src="../assets/node_modules/bootstrap/js/bootstrap.min.js"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
@@ -606,11 +719,21 @@
     <script src="js/waves.js"></script>
     <!--Menu sidebar -->
     <script src="js/sidebarmenu.js"></script>
-    <!--stickey kit -->
-    <script src="../assets/node_modules/sticky-kit-master/dist/sticky-kit.min.js"></script>
-    <script src="../assets/node_modules/sparkline/jquery.sparkline.min.js"></script>
     <!--Custom JavaScript -->
     <script src="js/custom.min.js"></script>
+    <!-- ============================================================== -->
+    <!-- This page plugins -->
+    <!-- ============================================================== -->
+    <!--morris JavaScript -->
+    <script src="../assets/node_modules/raphael/raphael-min.js"></script>
+    <script src="../assets/node_modules/morrisjs/morris.min.js"></script>
+    <!--c3 JavaScript -->
+    <script src="../assets/node_modules/d3/d3.min.js"></script>
+    <script src="../assets/node_modules/c3-master/c3.min.js"></script>
+    <!-- Popup message jquery -->
+    <script src="../assets/node_modules/toast-master/js/jquery.toast.js"></script>
+    <!-- Chart JS -->
+    <script src="js/dashboard1.js"></script>
     <!-- ============================================================== -->
     <!-- Style switcher -->
     <!-- ============================================================== -->
