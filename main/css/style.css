@@ -93,6 +93,18 @@ body {
     font-size: 14px;
 }
 
+
+.my-error-class {
+    color:#FF0000;  /* red */
+    font-size: 12px;
+}
+
+.my-valid-class {
+    color:#00cc33; /* Green */
+    font-size: 14px;
+}
+
+
 html {
     position: relative;
     min-height: 100%;
