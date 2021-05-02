@@ -6,7 +6,7 @@ session_start();
 $host = "localhost"; 
 $user = "root"; 
 $password = "";
-$dbname = "clinicabuendoctor"; 
+$dbname = "cliniciabuendoctor"; 
 
 $con = mysqli_connect($host, $user, $password,$dbname);
 
@@ -15,4 +15,4 @@ if (!$con) {
 } 
 echo "Entro";
 
-
+?>

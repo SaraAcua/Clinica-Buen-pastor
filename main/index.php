@@ -77,7 +77,8 @@
                             </div>
                             <div class="form-group text-center">
                                 <div class="col-xs-12 p-b-20">
-                                    <button style="background-color: #20AEE3;color: white;font-weight: bolder" class="btn btn-block btn-lg  btn-rounded" type="submit"><img id="imgLoaderPass" src="../assets/images/spinner/Loader_BK_SVG.svg" alt="x" id="botoningresar" width="28" height="18" /> Ingresar</button>
+                                    <button style="background-color: #20AEE3;color: white;font-weight: bolder" class="btn btn-block btn-lg  btn-rounded" type="submit" id="botoningresar"> <img id="imgLoaderPass" src="../assets/images/spinner/Loader_BK_SVG.svg" alt="x"  width="28" height="18" /> Ingresar</button>
+                                    
                                 </div>
                             </div>
                             <div class="row" id="request-message">

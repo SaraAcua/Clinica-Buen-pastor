@@ -7,6 +7,31 @@
 
 $(document).ready(function () {
 
+    console.log("documento");
+    $("#botoningresar").click(function(){
+        console.log("click");
+        var username = $.trim($("#user").val());
+        var password = $.trim($("#password").val());
+       
+
+        if( username != "" && password !="" ){
+            console.log("entro");
+            $.ajax({
+                url:'controlador/validaruser.php',
+                type:'post',
+               
+                data:{
+                    username:username,
+                    password:password
+                  
+                },
+                success:function(response){
+                window.location="dashboard.php";
+                
+                }
+            });
+        }
+    });
 
     disablePreloader();
 
