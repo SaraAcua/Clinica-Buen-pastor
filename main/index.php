@@ -66,7 +66,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-xs-12">
-                                    <input class="form-control" type="password" minlength="6" maxlength="20" required="" placeholder="Password"> </div>
+                                    <input class="form-control" type="password" minlength="4" maxlength="20" required="" placeholder="Password"> </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-12">
