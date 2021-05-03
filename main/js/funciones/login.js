@@ -7,7 +7,7 @@
 
 $(document).ready(function () {
 
-    console.log("documento");
+   /* console.log("documento");
     $("#botoningresar").click(function(){
         console.log("click");
         var username = $.trim($("#user").val());
@@ -31,7 +31,7 @@ $(document).ready(function () {
                 }
             });
         }
-    });
+    });*/
 
     disablePreloader();
 
@@ -46,36 +46,34 @@ $(document).ready(function () {
             var data = $("#loginform").serializeJSON();
             console.log(data);
             $("#request-message").empty();
-           /* $.ajax({
-                data: JSON.stringify(data),
-                url: '/area/save',
+            $.ajax({
+                data: data,
+                url: '../controlador/validaruser.php',
                 type: 'post',
-                contentType: "application/json",
-                dataType: 'json',
                 beforeSend: function () {
                     enablePreloader();
                 },
                 success: function (data) {
-                    console.log(data);
-                    if (data.status === "success") {
+                    //console.log(data);
+                    //console.log(data.estado);
+                   if (data.estado === "success") {
                         disablePreloader();
-                        clearResponseMessage();
-                        if ($("#btnActionzone").text() === " Registrar" || $("#btnActionzone").text() === "Registrar") {
-                            clearFields();
-                        }
-                        $("#request-message").append("<div style='text-aling:center;margin-top:2%' class='alert alert-success col-lg-12 col-sm-12' role='alert'>" + data.message + "</div>");
+                       // console.log("Todo ok");
+                         window.location.replace("dashboard.php");
                     } else {
                         disablePreloader();
                         clearResponseMessage();
-                        $("#request-message").append("<div style='text-aling:center;margin-top:2%' class='alert alert-danger col-lg-12 col-sm-12' role='alert'>" + data.message + "</div>");
+                        $("#request-message").append("<div style='text-aling:center;margin-top:2%' class='alert alert-danger col-lg-12 col-sm-12' role='alert'>" + data.mensaje + "</div>");
                     }
                 },
-                error: function () {
+                error: function (e) {
+                    console.log(data);
+                    console.log(e.toString());
                     disablePreloader();
                     clearResponseMessage();
-                    $("#request-message").append("<div style='text-aling:center;margin-top:2%' class='alert alert-danger col-lg-12 col-sm-12' role='alert'>" + data.message + "</div>");
+                    $("#request-message").append("<div style='text-aling:center;margin-top:2%' class='alert alert-danger col-lg-12 col-sm-12' role='alert'>" + data.mensaje + "</div>");
                 }
-            });*/
+            });
             return false;
         }
 

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,13 +61,16 @@
                             <div class="row justify-content-center align-content-center mb-2">
                                 <img src="../assets/images/Tertiary Teaching CLINIC.png"/>
                             </div>
+                            <div class="row" id="request-message">
+
+                            </div>
                             <div class="form-group ">
                                 <div class="col-xs-12">
-                                    <input class="form-control" minlength="3" maxlength="20" type="text" required="" placeholder="Username"> </div>
+                                    <input class="form-control" minlength="3" maxlength="20" name="usuario" type="text" required="" placeholder="Username"> </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-xs-12">
-                                    <input class="form-control" type="password" minlength="4" maxlength="20" required="" placeholder="Password"> </div>
+                                    <input class="form-control" type="password" minlength="4" name="clave" maxlength="20" required="" placeholder="Password"> </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-12">
@@ -78,11 +82,8 @@
                             <div class="form-group text-center">
                                 <div class="col-xs-12 p-b-20">
                                     <button style="background-color: #20AEE3;color: white;font-weight: bolder" class="btn btn-block btn-lg  btn-rounded" type="submit" id="botoningresar"> <img id="imgLoaderPass" src="../assets/images/spinner/Loader_BK_SVG.svg" alt="x"  width="28" height="18" /> Ingresar</button>
-                                    
-                                </div>
-                            </div>
-                            <div class="row" id="request-message">
 
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">

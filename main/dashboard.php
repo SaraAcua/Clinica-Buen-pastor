@@ -34,7 +34,16 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
+<?php
+session_start();
 
+//if(isset($_SESSION['usuario']))
+//{
+	
+//} else{
+//header('Location: index.php');
+//}
+?>
 <body class="fix-header fix-sidebar card-no-border">
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
@@ -334,8 +343,13 @@
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
         <?php 
-         include 'Include/sidebar_admin.php';
+        if($_SESSION['Rol'] == "admin"){
+                     include 'Include/sidebar_admin.php';
+        }else{
+                     include 'Include/sidebar_personal.php';
+        }
         ?>
+        <h1><?php echo $_SESSION['Rol']; ?></h1>
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
