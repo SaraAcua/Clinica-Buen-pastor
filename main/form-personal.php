@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
-    <title>AdminWrap - Easy to Customize Bootstrap 4 Admin Template</title>
+    <title>Clinica buen pastor - Easy to Customize Bootstrap 4 Admin Template</title>
     <!-- Bootstrap Core CSS -->
     <link href="../assets/node_modules/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/node_modules/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
@@ -34,6 +34,16 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
+<?php
+session_start();
+
+//if(isset($_SESSION['usuario']))
+//{
+	
+//} else{
+//header('Location: index.php');
+//}
+?>
 
 <body class="fix-header fix-sidebar card-no-border">
     <!-- ============================================================== -->
@@ -49,16 +59,24 @@
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
     <div id="main-wrapper">
+        
+        
         <!-- ============================================================== -->
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
         <header class="topbar">
+            
+              <?php 
+        
+        include './Include/header.php';
+        ?>
+        
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                 <!-- ============================================================== -->
                 <!-- Logo -->
                 <!-- ============================================================== -->
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="index.php">
                         <!-- Logo icon --><b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
@@ -208,101 +226,7 @@
                         <!-- ============================================================== -->
                         <!-- mega menu -->
                         <!-- ============================================================== -->
-                        <li class="nav-item dropdown mega-dropdown"> <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-Box-Close"></i></a>
-                            <div class="dropdown-menu animated bounceInDown">
-                                <ul class="mega-dropdown-menu row">
-                                    <li class="col-lg-3 col-xlg-2 m-b-30">
-                                        <h4 class="m-b-20">CAROUSEL</h4>
-                                        <!-- CAROUSEL -->
-                                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                                            <div class="carousel-inner" role="listbox">
-                                                <div class="carousel-item active">
-                                                    <div class="container"> <img class="d-block img-fluid" src="../assets/images/big/img1.jpg" alt="First slide"></div>
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <div class="container"><img class="d-block img-fluid" src="../assets/images/big/img2.jpg" alt="Second slide"></div>
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <div class="container"><img class="d-block img-fluid" src="../assets/images/big/img3.jpg" alt="Third slide"></div>
-                                                </div>
-                                            </div>
-                                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a>
-                                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
-                                        </div>
-                                        <!-- End CAROUSEL -->
-                                    </li>
-                                    <li class="col-lg-3 m-b-30">
-                                        <h4 class="m-b-20">ACCORDION</h4>
-                                        <!-- Accordian -->
-                                        <div id="accordion" class="nav-accordion" role="tablist" aria-multiselectable="true">
-                                            <div class="card">
-                                                <div class="card-header" role="tab" id="headingOne">
-                                                    <h5 class="mb-0">
-                                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                            Collapsible Group Item #1
-                                                        </a>
-                                                    </h5>
-                                                </div>
-                                                <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
-                                                    <div class="card-body"> Anim pariatur cliche reprehenderit, enim eiusmod high. </div>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-header" role="tab" id="headingTwo">
-                                                    <h5 class="mb-0">
-                                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                            Collapsible Group Item #2
-                                                        </a>
-                                                    </h5>
-                                                </div>
-                                                <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                                    <div class="card-body"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. </div>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-header" role="tab" id="headingThree">
-                                                    <h5 class="mb-0">
-                                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                            Collapsible Group Item #3
-                                                        </a>
-                                                    </h5>
-                                                </div>
-                                                <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
-                                                    <div class="card-body"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="col-lg-3  m-b-30">
-                                        <h4 class="m-b-20">CONTACT US</h4>
-                                        <!-- Contact -->
-                                        <form>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="exampleInputname1" placeholder="Enter Name">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="email" class="form-control" placeholder="Enter email">
-                                            </div>
-                                            <div class="form-group">
-                                                <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Message"></textarea>
-                                            </div>
-                                            <button type="submit" class="btn btn-info">Submit</button>
-                                        </form>
-                                    </li>
-                                    <li class="col-lg-3 col-xlg-4 m-b-30">
-                                        <h4 class="m-b-20">List style</h4>
-                                        <!-- List style -->
-                                        <ul class="list-style-none">
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> You can give link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> Give link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> Another Give link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> Forth link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> Another fifth link</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
+                   
                         <!-- ============================================================== -->
                         <!-- End mega menu -->
                         <!-- ============================================================== -->
@@ -316,30 +240,7 @@
                         <!-- ============================================================== -->
                         <!-- Profile -->
                         <!-- ============================================================== -->
-                        <li class="nav-item dropdown u-pro">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/images/users/1.jpg" alt="user" class="" /> <span class="hidden-md-down">Mark Sanders &nbsp;<i class="fa fa-angle-down"></i></span> </a>
-                            <div class="dropdown-menu dropdown-menu-right animated flipInY">
-                                <ul class="dropdown-user">
-                                    <li>
-                                        <div class="dw-user-box">
-                                            <div class="u-img"><img src="../assets/images/users/1.jpg" alt="user"></div>
-                                            <div class="u-text">
-                                                <h4>Steave Jobs</h4>
-                                                <p class="text-muted">varun@gmail.com</p><a href="pages-profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
-                                    <li><a href="#"><i class="ti-wallet"></i> My Balance</a></li>
-                                    <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
-                                </ul>
-                            </div>
-                        </li>
+                    
                     </ul>
                 </div>
             </nav>
@@ -396,33 +297,31 @@
                                 <h4 class="m-b-0 text-white">Formulario de registro</h4>
                             </div>
                             <div class="card-body">
-                                <form action="#">
+                                 <form id="form-persona" action="#">
                                     <div class="form-body">
                                         <h3 class="card-title">Informacion del personal</h3>
                                         <hr>
                                         <div class="row p-t-20">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="control-label">Foto</label>
-                                                    <input type="imput" id="fotopaciente" class="form-control" placeholder="foto paciente">
-                                                    <small class="form-control-feedback"> This is inline help </small>
+                                             <div class="col-md-12 justified-content-center align-content-center">
+                                                <img id="Img_Personal" src="../assets/images/users/user_blanco.png"  height="140" width="140" alt="Imagen Usuario">
+                                                <div style="margin-top: 3%">
+                                                    <input type="file" id="btn_Subir_Imagen" class="form-control-file" accept="image/*" />
+                                                    <input id="txtimg64" name="foto" type="hidden"/>
                                                 </div>
                                             </div>
                                             <!--/span-->
-                                            <div class="col-md-6">
+                                            <div class="col-md-6 mt-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Nombre</label>
-                                                    <input type="text" id="firstName" class="form-control" placeholder="nombre">
-                                                    <small class="form-control-feedback"> This field has error. </small>
+                                                    <input type="text" id="nombre" name="nombre" class="form-control" placeholder="nombre">
                                                 </div>
                                             </div>
                                             <!--/span-->
                                             <!--/span-->
-                                            <div class="col-md-6">
+                                            <div class="col-md-6 mt-3">
                                                 <div class="form-group">
-                                                    <label class="control-label">Apellido</label>
-                                                    <input type="text" id="lasttName" class="form-control" placeholder="apellido">
-                                                    <small class="form-control-feedback"> This field has error. </small>
+                                                    <label class="control-label" >Apellido</label>
+                                                    <input type="text" id="apellido" name="apellido"  class="form-control" placeholder="apellido">
                                                 </div>
                                             </div>
 
@@ -433,7 +332,7 @@
                                                 <div class="form-group ">
                                                     <label class="control-label text-right">Tipo</label>
                                                     <div class="col-md-9">
-                                                        <select class="form-control custom-select">
+                                                        <select id="tipo" name="tipo" class="form-control custom-select">
                                                             <option> Seleccione</option>
                                                             <option> Medico</option>
                                                             <option> Enfermera</option>
@@ -445,31 +344,31 @@
                                              
                                             <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="control-label">Trabjando</label>
+                                                <label class="control-label">Trabajando</label>
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                                    <input type="radio"  value="1" id="trabajo" name="trabajo" class="custom-control-input">
                                                     <label class="custom-control-label" for="customRadio1">En servicio</label>
                                                 </div>
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                                    <input type="radio" value="1" id="trabajo" name="trabajo" class="custom-control-input">
                                                     <label class="custom-control-label" for="customRadio2">Libre</label>
                                                 </div>
                                             </div>
                                         </div>
                                             
                                             <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="control-label">Estado</label>
-                                                <div class="custom-control custom-radio">
-                                                    <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                                                    <label class="custom-control-label" for="customRadio1">Activo</label>
-                                                </div>
-                                                <div class="custom-control custom-radio">
-                                                    <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                                                    <label class="custom-control-label" for="customRadio2">Inactivo</label>
+                                                <div class="form-group">
+                                                    <label class="control-label">Estado</label>
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" value="1" id="estado" name="estado" class="custom-control-input">
+                                                        <label class="custom-control-label" for="customRadio1">Activo</label>
+                                                    </div>
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" value="0"  id="customRadio2" name="estado" class="custom-control-input">
+                                                        <label class="custom-control-label" for="customRadio2">Inactivo</label>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
 
                                             <!--/span-->
                                         </div>
@@ -481,15 +380,22 @@
                                        
                                         <!--/span-->
                                     </div>
+                              
                                     <!--/row-->
                                    
                                  
                                    
                                
                             </div>
-                            <div class="form-actions">
-                                <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> guardar</button>
-                                <button type="button" class="btn btn-inverse">Cancel</button>
+                             <div class="form-actions">
+                                <?php if (!isset($_GET["id"])) { ?>
+                                    <input hidden="" name="accion" value="RegistrarP">
+                                    <button type="submit"  class="btn btn-success"  ><img id="imgLoaderPass" src="../assets/images/spinner/Loader_BK_SVG.svg" alt="x"  width="28" height="18" /> <i class="fa fa-check"></i> Registrar</button>
+                                <?php } else { ?>
+                                    <input hidden="" name="accion" value="ActualizarP">
+                                    <button type="submit"   class="btn btn-success"  ><img id="imgLoaderPass" src="../assets/images/spinner/Loader_BK_SVG.svg" alt="x"  width="28" height="18" /> <i class="fa fa-check"></i> Actualizar</button>
+                                <?php } ?> 
+                                <a href="dashboard.php"><button type="button" class="btn btn-inverse">Cancel</button></a> 
                             </div>
                             </form>
                         </div>
@@ -594,25 +500,82 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="../assets/node_modules/jquery/jquery.min.js"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <script src="../assets/node_modules/bootstrap/js/popper.min.js"></script>
-    <script src="../assets/node_modules/bootstrap/js/bootstrap.min.js"></script>
-    <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="../assets/node_modules/ps/perfect-scrollbar.jquery.min.js"></script>
-    <!--Wave Effects -->
-    <script src="js/waves.js"></script>
-    <!--Menu sidebar -->
-    <script src="js/sidebarmenu.js"></script>
-    <!--stickey kit -->
-    <script src="../assets/node_modules/sticky-kit-master/dist/sticky-kit.min.js"></script>
-    <script src="../assets/node_modules/sparkline/jquery.sparkline.min.js"></script>
-    <!--Custom JavaScript -->
-    <script src="js/custom.min.js"></script>
-    <!-- ============================================================== -->
-    <!-- Style switcher -->
-    <!-- ============================================================== -->
-    <script src="../assets/node_modules/styleswitcher/jQuery.style.switcher.js"></script>
-</body>
+   <script src="../assets/node_modules/jquery/jquery.min.js"></script>
+        <!-- Bootstrap tether Core JavaScript -->
+        <script src="../assets/node_modules/bootstrap/js/popper.min.js"></script>
+        <script src="../assets/node_modules/bootstrap/js/bootstrap.min.js"></script>
+        <!-- slimscrollbar scrollbar JavaScript -->
+        <script src="../assets/node_modules/ps/perfect-scrollbar.jquery.min.js"></script>
+        <!--Wave Effects -->
+        <script src="js/waves.js"></script>
+        <!--Menu sidebar -->
+        <script src="js/sidebarmenu.js"></script>
+        <!--stickey kit -->
+        <script src="../assets/node_modules/sticky-kit-master/dist/sticky-kit.min.js"></script>
+        <script src="../assets/node_modules/sparkline/jquery.sparkline.min.js"></script>
+        <!--Custom JavaScript -->
+        <script src="js/custom.min.js"></script>
+        <!-- ============================================================== -->
+        <!-- Style switcher -->
+        <!-- ============================================================== -->
+        <script src="../assets/node_modules/styleswitcher/jQuery.style.switcher.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script src="js/jquery.validate.js"></script>
+        <script src="js/localization/messages_es.min.js"></script>
+        <script src="js/jquery.serializejson.js"></script>
+        
+        <script>
+            var filesSelected = document.getElementById("btn_Subir_Imagen").files;
+            $("#btn_Subir_Imagen").change(function () {
+                var filesSelected = document.getElementById("btn_Subir_Imagen").files;
+                if (filesSelected.length > 0) {
+                    var fileToLoad = filesSelected[0];
+                    var fileReader = new FileReader();
+                    fileReader.onload = function (fileLoadedEvent) {
+                        var base64value = fileLoadedEvent.target.result;
+                        // console.log(base64value);
+                        $("#txtimg64").val(base64value);
+                    };
+                    fileReader.readAsDataURL(fileToLoad);
+                }
+            });
+        </script>
+        <script>
+            $(function () {
+                $('#btn_Subir_Imagen').change(function (e) {
+                    addImage(e);
+                });
+                function addImage(e) {
+                    var file = e.target.files[0],
+                            imageType = /image.*/;
+                    if (!file.type.match(imageType))
+                        return;
+                    var reader = new FileReader();
+                    reader.onload = fileOnload;
+                    reader.readAsDataURL(file);
+                }
+
+                function fileOnload(e) {
+                    var result = e.target.result;
+                    $('#Img_Personal').attr("src", result);
+                }
+
+                $("#btn_Subir_Imagen").change(function () {
+                    var filesSelected = document.getElementById("btn_Subir_Imagen").files;
+                    if (filesSelected.length > 0) {
+                        var fileToLoad = filesSelected[0];
+                        var fileReader = new FileReader();
+                        fileReader.onload = function (fileLoadedEvent) {
+                            var base64value = fileLoadedEvent.target.result;
+                            $("#txtimg64").val(base64value);
+                        };
+                        fileReader.readAsDataURL(fileToLoad);
+                    }
+
+                });
+            });
+        </script>
+        <script src="js/funciones/form-personal.js"></script>
+    </body>
 
 </html>

@@ -10,7 +10,8 @@ $count = 0;
 $json_string = "";
 echo $accion;
 if ($accion == "Registrar") {
-
+    
+    
     $nombre = $_POST['nombre'];
     $foto = $_POST['foto'];
     $apellido = $_POST['apellido'];
@@ -20,9 +21,11 @@ if ($accion == "Registrar") {
     $barrio = $_POST['barrio'];
     $telefono = $_POST['telefono'];
     $ciudad = $_POST['ciudad'];
-    $estado = $_POST['estado'];
+    $estado = $_POST['estado']; 
+    echo $estado;
 
     $sql_query = "INSERT INTO pacientes( `foto`, `nombre`, `apellido`, `fecha_nacimiento`, `edad`, `direccion`, `barrio`, `telefono`, `ciudad`, `estado`) VALUES ('$foto','$nombre','$apellido','$fecha_nacimiento','$edad','$direccion','$barrio','$telefono','$ciudad',$estado)";
+    //$sql_query = "INSERT INTO pacientes( `nombre`, `apellido`, `fecha_nacimiento`, `edad`, `direccion`, `barrio`, `telefono`, `ciudad`, `estado`) VALUES ('$nombre','$apellido','$fecha_nacimiento','$edad','$direccion','$barrio','$telefono','$ciudad',$estado)";
     echo $sql_query;
     $result = mysqli_query($con, $sql_query);
     $row = mysqli_fetch_array($result);

@@ -5,7 +5,7 @@
     <!-- Logo -->
     <!-- ============================================================== -->
     <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="dashboard.php">
             <!-- Logo icon --><b>
                 <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                 <!-- Dark Logo icon -->
@@ -83,7 +83,7 @@
                     <ul class="dropdown-user">
                         <li>
                             <div class="dw-user-box">
-                                <div class="u-img"><img src="../assets/images/users/1.jpg" alt="user"></div>
+                                <div class="u-img"><img src="../assets/images/users/4.jpg" alt="user"></div>
                                 <div class="u-text">
                                     <h4>Steave Jobs</h4>
                                 </div>

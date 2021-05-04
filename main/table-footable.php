@@ -29,6 +29,16 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
+<?php
+session_start();
+
+//if(isset($_SESSION['usuario']))
+//{
+	
+//} else{
+//header('Location: index.php');
+//}
+?>
 
 <body class="fix-header card-no-border fix-sidebar">
     <!-- ============================================================== -->
@@ -48,6 +58,11 @@
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
         <header class="topbar">
+             <?php 
+        
+        include './Include/header.php';
+        ?>
+        
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                 <!-- ============================================================== -->
                 <!-- Logo -->
@@ -192,96 +207,7 @@
                         <!-- ============================================================== -->
                         <!-- mega menu -->
                         <!-- ============================================================== -->
-                        <li class="nav-item dropdown mega-dropdown"> <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-Box-Close"></i></a>
-                            <div class="dropdown-menu animated bounceInDown">
-                                <ul class="mega-dropdown-menu row">
-                                    <li class="col-lg-3 col-xlg-2 m-b-30">
-                                        <h4 class="m-b-20">CAROUSEL</h4>
-                                        <!-- CAROUSEL -->
-                                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                                            <div class="carousel-inner" role="listbox">
-                                                <div class="carousel-item active">
-                                                    <div class="container"> <img class="d-block img-fluid" src="../assets/images/big/img1.jpg" alt="First slide"></div>
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <div class="container"><img class="d-block img-fluid" src="../assets/images/big/img2.jpg" alt="Second slide"></div>
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <div class="container"><img class="d-block img-fluid" src="../assets/images/big/img3.jpg" alt="Third slide"></div>
-                                                </div>
-                                            </div>
-                                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a>
-                                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
-                                        </div>
-                                        <!-- End CAROUSEL -->
-                                    </li>
-                                    <li class="col-lg-3 m-b-30">
-                                        <h4 class="m-b-20">ACCORDION</h4>
-                                        <!-- Accordian -->
-                                        <div id="accordion" class="nav-accordion" role="tablist" aria-multiselectable="true">
-                                            <div class="card">
-                                                <div class="card-header" role="tab" id="headingOne">
-                                                    <h5 class="mb-0">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                  Collapsible Group Item #1
-                                                </a>
-                                              </h5> </div>
-                                                <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
-                                                    <div class="card-body"> Anim pariatur cliche reprehenderit, enim eiusmod high. </div>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-header" role="tab" id="headingTwo">
-                                                    <h5 class="mb-0">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                  Collapsible Group Item #2
-                                                </a>
-                                              </h5> </div>
-                                                <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                                    <div class="card-body"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. </div>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-header" role="tab" id="headingThree">
-                                                    <h5 class="mb-0">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                  Collapsible Group Item #3
-                                                </a>
-                                              </h5> </div>
-                                                <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
-                                                    <div class="card-body"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="col-lg-3  m-b-30">
-                                        <h4 class="m-b-20">CONTACT US</h4>
-                                        <!-- Contact -->
-                                        <form>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="exampleInputname1" placeholder="Enter Name"> </div>
-                                            <div class="form-group">
-                                                <input type="email" class="form-control" placeholder="Enter email"> </div>
-                                            <div class="form-group">
-                                                <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Message"></textarea>
-                                            </div>
-                                            <button type="submit" class="btn btn-info">Submit</button>
-                                        </form>
-                                    </li>
-                                    <li class="col-lg-3 col-xlg-4 m-b-30">
-                                        <h4 class="m-b-20">List style</h4>
-                                        <!-- List style -->
-                                        <ul class="list-style-none">
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> You can give link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> Give link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> Another Give link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> Forth link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> Another fifth link</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
+                       
                         <!-- ============================================================== -->
                         <!-- End mega menu -->
                         <!-- ============================================================== -->
@@ -390,188 +316,13 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>
-                                                    <a href="javascript:void(0)"><img src="../assets/images/users/4.jpg" alt="user" width="40" class="img-circle" /> Genelia Deshmukh</a>
-                                                </td>
-                                                <td>genelia@gmail.com</td>
-                                                <td>+123 456 789</td>
-                                                <td><span class="label label-danger">Designer</span> </td>
-                                                <td>23</td>
-                                                <td>12-10-2014</td>
-                                                <td>$1200</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>
-                                                    <a href="javascript:void(0)"><img src="../assets/images/users/5.jpg" alt="user" width="40" class="img-circle" /> Arijit Singh</a>
-                                                </td>
-                                                <td>arijit@gmail.com</td>
-                                                <td>+234 456 789</td>
-                                                <td><span class="label label-info">Developer</span> </td>
-                                                <td>26</td>
-                                                <td>10-09-2014</td>
-                                                <td>$1800</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>
-                                                    <a href="javascript:void(0)"><img src="../assets/images/users/6.jpg" alt="user" width="40" class="img-circle" /> Govinda jalan</a>
-                                                </td>
-                                                <td>govinda@gmail.com</td>
-                                                <td>+345 456 789</td>
-                                                <td><span class="label label-success">Accountant</span></td>
-                                                <td>28</td>
-                                                <td>1-10-2013</td>
-                                                <td>$2200</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
+                                         
+                                            
+                                              
+                                                  
                                           
-                                           
-                                            <tr>
-                                                <td>6</td>
-                                                <td>
-                                                    <a href="javascript:void(0)"><img src="../assets/images/users/1.jpg" alt="user" width="40" class="img-circle" /> Pawandeep kumar</a>
-                                                </td>
-                                                <td>pawandeep@gmail.com</td>
-                                                <td>+678 456 789</td>
-                                                <td><span class="label label-warning">Chairman</span></td>
-                                                <td>29</td>
-                                                <td>10-5-2013</td>
-                                                <td>$1500</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>7</td>
-                                                <td>
-                                                    <a href="javascript:void(0)"><img src="../assets/images/users/2.jpg" alt="user" width="40" class="img-circle" /> Ritesh Deshmukh</a>
-                                                </td>
-                                                <td>ritesh@gmail.com</td>
-                                                <td>+123 456 789</td>
-                                                <td><span class="label label-danger">Designer</span></td>
-                                                <td>35</td>
-                                                <td>05-10-2012</td>
-                                                <td>$3200</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>8</td>
-                                                <td>
-                                                    <a href="javascript:void(0)"><img src="../assets/images/users/2.jpg" alt="user" width="40" class="img-circle" /> Salman Khan</a>
-                                                </td>
-                                                <td>salman@gmail.com</td>
-                                                <td>+234 456 789</td>
-                                                <td><span class="label label-info">Developer</span></td>
-                                                <td>27</td>
-                                                <td>11-10-2014</td>
-                                                <td>$1800</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>9</td>
-                                                <td>
-                                                    <a href="javascript:void(0)"><img src="../assets/images/users/3.jpg" alt="user" width="40" class="img-circle" /> Govinda jalan</a>
-                                                </td>
-                                                <td>govinda@gmail.com</td>
-                                                <td>+345 456 789</td>
-                                                <td><span class="label label-success">Accountant</span></td>
-                                                <td>18</td>
-                                                <td>12-5-2017</td>
-                                                <td>$100</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>10</td>
-                                                <td>
-                                                    <a href="javascript:void(0)"><img src="../assets/images/users/4.jpg" alt="user" width="40" class="img-circle" /> Sonu Nigam</a>
-                                                </td>
-                                                <td>sonu@gmail.com</td>
-                                                <td>+456 456 789</td>
-                                                <td><span class="label label-inverse">HR</span></td>
-                                                <td>36</td>
-                                                <td>18-5-2009</td>
-                                                <td>$4200</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>11</td>
-                                                <td>
-                                                    <a href="javascript:void(0)"><img src="../assets/images/users/5.jpg" alt="user" width="40" class="img-circle" /> Varun Dhawan</a>
-                                                </td>
-                                                <td>varun@gmail.com</td>
-                                                <td>+567 456 789</td>
-                                                <td><span class="label label-danger">Manager</span></td>
-                                                <td>43</td>
-                                                <td>12-10-2010</td>
-                                                <td>$5200</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>12</td>
-                                                <td>
-                                                    <a href="javascript:void(0)"><img src="../assets/images/users/6.jpg" alt="user" width="40" class="img-circle" /> Genelia Deshmukh</a>
-                                                </td>
-                                                <td>genelia@gmail.com</td>
-                                                <td>+123 456 789</td>
-                                                <td><span class="label label-danger">Designer</span> </td>
-                                                <td>23</td>
-                                                <td>12-10-2014</td>
-                                                <td>$1200</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>13</td>
-                                                <td>
-                                                    <a href="javascript:void(0)"><img src="../assets/images/users/7.jpg" alt="user" width="40" class="img-circle" /> Arijit Singh</a>
-                                                </td>
-                                                <td>arijit@gmail.com</td>
-                                                <td>+234 456 789</td>
-                                                <td><span class="label label-info">Developer</span> </td>
-                                                <td>26</td>
-                                                <td>10-09-2014</td>
-                                                <td>$1800</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>14</td>
-                                                <td>
-                                                    <a href="javascript:void(0)"><img src="../assets/images/users/8.jpg" alt="user" width="40" class="img-circle" /> Govinda jalan</a>
-                                                </td>
-                                                <td>govinda@gmail.com</td>
-                                                <td>+345 456 789</td>
-                                                <td><span class="label label-success">Accountant</span></td>
-                                                <td>28</td>
-                                                <td>1-10-2013</td>
-                                                <td>$2200</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
+                                         
+                                         
                                         </tbody>
                                         <tfoot>
                                             <tr>
