@@ -27,11 +27,14 @@ $(document).ready(function () {
                 url: '../controlador/personal.php',
                 type: 'post',
                 beforeSend: function () {
+                   
                     enablePreloader();
                 },
                 success: function (data) {
                     console.log(data);
-                    //console.log(data.estado);
+                     Limpiar();
+                    
+                    
                     if (data.estado === "success") {
                         disablePreloader();
                         Swal.fire({
@@ -80,7 +83,16 @@ $(document).ready(function () {
         $("#request-message").empty();
     }
 
+function Limpiar()
+{
+    $("#foto").val("");
+    $("#nombre").val("");
+    $("#apellido").val("");
+    $("#tipo").val("");
+    $("#trabajo").val("");
+    $("#estado").val("");
 
+}
 
 
 });

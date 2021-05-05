@@ -28,11 +28,11 @@ if ($accion == "RegistrarP") {
 
     if (mysqli_query($con, $sql)) {
         $data['estado'] = 'success';
-        $data['mensaje'] = 'Se ha registrado correctamente el paciente !!!';
+        $data['mensaje'] = 'Se ha registrado correctamente el personal !!!';
         $json_string = json_encode($data);
     } else {
         $data['estado'] = 'error';
-        $data['mensaje'] = 'Ha ocurrido un error al registrar el paciente !!!';
+        $data['mensaje'] = 'Ha ocurrido un error al registrar el personal !!!';
         $json_string = json_encode($data);
     }
 
@@ -64,5 +64,7 @@ if ($accion == "RegistrarP") {
 
     echo $json_string;
 }
+
+
 ?>
 
