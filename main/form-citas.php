@@ -414,11 +414,11 @@
 
                                                     <label >Paciente</label>
                                                     <div class="input-group mb-3">
-                                                        <input type="text" disabled="5" id="txt_color_Animal" class="form-control" placeholder="Paciente" aria-label="" aria-describedby="basic-addon1">
-                                                        <input class="form-control"  type="hidden" id="txtidColor
+                                                        <input type="text" required  disabled="5" id="txt_color_Animal" class="form-control" placeholder="Paciente" aria-label="" aria-describedby="basic-addon1">
+                                                        <input class="form-control" required  type="hidden" id="txtidColor
                                                                _Animal">
                                                         <div class="input-group-append">
-                                                            <button class="btn" style="background-color: #14A3E7;color: #ffffff" data-toggle="modal" data-toggle="modal" data-target="#ModalSeleccionarPaciente" type="button">Seleccionar paciente</button>
+                                                            <button required class="btn" style="background-color: #14A3E7;color: #ffffff" data-toggle="modal" data-toggle="modal" data-target="#ModalSeleccionarPaciente" type="button">Seleccionar paciente</button>
                                                         </div>
                                                     </div>
 
@@ -431,12 +431,12 @@
                                                 <!--/span-->
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label class="control-label">Fecha nacimiento</label>
+                                                        <label class="control-label">Fecha de cita</label>
 
                                                         <?php if (isset($_GET["id"])) { ?>
-                                                            <input type="date"   name="fecha_nacimiento" value="<?php echo $fecha_nacimiento; ?>" class="form-control" placeholder="dd/mm/yyyy">
+                                                            <input type="date" required   name="fecha_nacimiento" value="<?php echo $fecha_nacimiento; ?>" class="form-control" placeholder="dd/mm/yyyy">
                                                         <?php } else { ?>
-                                                            <input type="date"   name="fecha_nacimiento" class="form-control" placeholder="dd/mm/yyyy">
+                                                            <input type="date" required   name="fecha_nacimiento" class="form-control" placeholder="dd/mm/yyyy">
                                                         <?php } ?>
                                                     </div>
                                                 </div>
@@ -476,18 +476,27 @@
                                                                     <option>No Atendido</option>
                                                                     <option>Asignado</option>
                                                                     <option>Anulada</option>
-                                                                <?php } else if ($est === "No Atendido") { ?>
+                                                                <?php } else if ($estado === "No Atendido") { ?>
                                                                     <option value="">--Seleccione--</option>
                                                                     <option >Atendido</option>
                                                                     <option >En Servicio</option>
                                                                     <option selected="">No Atendido</option>
                                                                     <option>Asignado</option>
                                                                     <option>Anulada</option>
+                                                                <?php } else if ($estado === "Asignado") { ?>
+                                                                    <option value="">--Seleccione--</option>
+                                                                    <option >Atendido</option>
+                                                                    <option >En Servicio</option>
+                                                                    <option >No Atendido</option>
+                                                                    <option selected="">Asignado</option>
+                                                                    <option>Anulada</option>
                                                                 <?php } else { ?>
-                                                                    <option selected="">--Seleccione--</option>
-                                                                    <option value="Enfermera" >Enfermera</option>
-                                                                    <option value="Medico" >Medico</option>
-                                                                    <option value="Fisioterapeuta" selected="">Fisioterapeuta</option>
+                                                                    <option value="">--Seleccione--</option>
+                                                                    <option >Atendido</option>
+                                                                    <option >En Servicio</option>
+                                                                    <option >No Atendido</option>
+                                                                    <option >Asignado</option>
+                                                                    <option selected="">Anulada</option>
                                                                 <?php } ?>
                                                             </select>
                                                         <?php } ?>
@@ -503,8 +512,14 @@
 
                                 </div>
                                 <div class="form-actions">
-                                    <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Save</button>
-                                    <button type="button" class="btn btn-inverse">Cancel</button>
+                                    <?php if (!isset($_GET["id"])) { ?>
+                                        <input hidden="" name="accion" value="RegistrarC">
+                                        <button type="submit"  class="btn btn-success"  ><img id="imgLoaderPass" src="../assets/images/spinner/Loader_BK_SVG.svg" alt="x"  width="28" height="18" /> <i class="fa fa-check"></i> Registrar</button>
+                                    <?php } else { ?>
+                                        <input hidden="" name="accion" value="ActualizarC">
+                                        <button type="submit"   class="btn btn-success"  ><img id="imgLoaderPass" src="../assets/images/spinner/Loader_BK_SVG.svg" alt="x"  width="28" height="18" /> <i class="fa fa-check"></i> Actualizar</button>
+                                    <?php } ?> 
+                                    <a href="dashboard.php"><button type="button" class="btn btn-inverse">Cancel</button></a> 
                                 </div>
                                 </form>
 
@@ -513,20 +528,23 @@
                                     <div class="modal-dialog modal-xl">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title" id="myLargeModalLabel">Seleccione el Color</h4>
+                                                <h4 class="modal-title" id="myLargeModalLabel">Seleccione el Paciente</h4>
                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                             </div>
                                             <div class="modal-body">
-                                                <div class="row justify-content-center"><h4 style="font-weight: bold;color: #34338E">Lista de Colores</h4></div>
+                                                <div class="row justify-content-center"><h4 style="font-weight: bold;color: #34338E">Lista de Pacientes</h4></div>
                                                 <div class="table-responsive-xl">
-                                                    <table style="width: 100%" id="Tabla-Color"class="table table">
+                                                    <table style="width: 100%" id="Tabla-pacientes"class="table table">
                                                         <thead>
-                                                        <th style="background-color: #34338E;font-weight: bolder;color: white;text-align: center;border: white solid 1px;font-size:18px">ID</th>
-                                                        <th style="background-color: #34338E;font-weight: bolder;color: white;text-align: center;border: white solid 1px;font-size:18px">Color</th>
-                                                        <th style="background-color: #34338E;font-weight: bolder;color: white;text-align: center;border: white solid 1px;font-size:18px">Seleccionar</th>
+                                                        <th style="background-color: #14A3E7;font-weight: bolder;color: white;text-align: center;border: white solid 1px;font-size:18px">ID</th>
+                                                        <th style="background-color: #14A3E7;font-weight: bolder;color: white;text-align: center;border: white solid 1px;font-size:18px">Nombre</th>
+                                                        <th style="background-color: #14A3E7;font-weight: bolder;color: white;text-align: center;border: white solid 1px;font-size:18px">Apellido</th>
+                                                        <th style="background-color: #14A3E7E;font-weight: bolder;color: white;text-align: center;border: white solid 1px;font-size:18px">Seleccionar</th>
                                                         </thead>
                                                         <tbody id="Cuerpo_Tabla_Color_Modal">
-
+                                                            <?php
+                                                            include '../controlador/modal-citas-pacientes.php';
+                                                            ?>
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -541,20 +559,24 @@
                                     <div class="modal-dialog modal-xl">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title" id="myLargeModalLabel">Seleccione el Color</h4>
+                                                <h4 class="modal-title" id="myLargeModalLabel">Seleccione el personal</h4>
                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                             </div>
                                             <div class="modal-body">
-                                                <div class="row justify-content-center"><h4 style="font-weight: bold;color: #34338E">Lista de Colores</h4></div>
+                                                <div class="row justify-content-center"><h4 style="font-weight: bold;color: #34338E">Lista de Personal</h4></div>
                                                 <div class="table-responsive-xl">
                                                     <table style="width: 100%" id="Tabla-Color"class="table table">
                                                         <thead>
-                                                        <th style="background-color: #34338E;font-weight: bolder;color: white;text-align: center;border: white solid 1px;font-size:18px">ID</th>
-                                                        <th style="background-color: #34338E;font-weight: bolder;color: white;text-align: center;border: white solid 1px;font-size:18px">Color</th>
-                                                        <th style="background-color: #34338E;font-weight: bolder;color: white;text-align: center;border: white solid 1px;font-size:18px">Seleccionar</th>
+                                                        <th style="background-color: #14A3E7;font-weight: bolder;color: white;text-align: center;border: white solid 1px;font-size:18px">ID</th>
+                                                        <th style="background-color: #14A3E7;font-weight: bolder;color: white;text-align: center;border: white solid 1px;font-size:18px">Nombre</th>
+                                                        <th style="background-color: #14A3E7;font-weight: bolder;color: white;text-align: center;border: white solid 1px;font-size:18px">Tipo</th>
+                                                        <th style="background-color: #14A3E7;font-weight: bolder;color: white;text-align: center;border: white solid 1px;font-size:18px">Estado</th>
+                                                        <th style="background-color: #14A3E7E;font-weight: bolder;color: white;text-align: center;border: white solid 1px;font-size:18px">Seleccionar</th>
                                                         </thead>
                                                         <tbody id="Cuerpo_Tabla_Color_Modal">
-
+                                                            <?php
+                                                            include '../controlador/modal-citas-personal.php';
+                                                            ?>
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -565,6 +587,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -592,56 +615,7 @@
                 <!-- Right sidebar -->
                 <!-- ============================================================== -->
                 <!-- .right-sidebar -->
-                <div class="right-sidebar">
-                    <div class="slimscrollright">
-                        <div class="rpanel-title"> Service Panel <span><i class="ti-close right-side-toggle"></i></span> </div>
-                        <div class="r-panel-body">
-                            <ul id="themecolors" class="m-t-20">
-                                <li><b>With Light sidebar</b></li>
-                                <li><a href="javascript:void(0)" data-theme="default" class="default-theme">1</a></li>
-                                <li><a href="javascript:void(0)" data-theme="green" class="green-theme">2</a></li>
-                                <li><a href="javascript:void(0)" data-theme="red" class="red-theme">3</a></li>
-                                <li><a href="javascript:void(0)" data-theme="blue" class="blue-theme">4</a></li>
-                                <li><a href="javascript:void(0)" data-theme="purple" class="purple-theme">5</a></li>
-                                <li><a href="javascript:void(0)" data-theme="megna" class="megna-theme">6</a></li>
-                                <li class="d-block m-t-30"><b>With Dark sidebar</b></li>
-                                <li><a href="javascript:void(0)" data-theme="default-dark" class="default-dark-theme working">7</a></li>
-                                <li><a href="javascript:void(0)" data-theme="green-dark" class="green-dark-theme">8</a></li>
-                                <li><a href="javascript:void(0)" data-theme="red-dark" class="red-dark-theme">9</a></li>
-                                <li><a href="javascript:void(0)" data-theme="blue-dark" class="blue-dark-theme">10</a></li>
-                                <li><a href="javascript:void(0)" data-theme="purple-dark" class="purple-dark-theme">11</a></li>
-                                <li><a href="javascript:void(0)" data-theme="megna-dark" class="megna-dark-theme ">12</a></li>
-                            </ul>
-                            <ul class="m-t-20 chatonline">
-                                <li><b>Chat option</b></li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/1.jpg" alt="user-img" class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/2.jpg" alt="user-img" class="img-circle"> <span>Genelia Deshmukh <small class="text-warning">Away</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/3.jpg" alt="user-img" class="img-circle"> <span>Ritesh Deshmukh <small class="text-danger">Busy</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/4.jpg" alt="user-img" class="img-circle"> <span>Arijit Sinh <small class="text-muted">Offline</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/5.jpg" alt="user-img" class="img-circle"> <span>Govinda Star <small class="text-success">online</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/6.jpg" alt="user-img" class="img-circle"> <span>John Abraham<small class="text-success">online</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/7.jpg" alt="user-img" class="img-circle"> <span>Hritik Roshan<small class="text-success">online</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/8.jpg" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="text-success">online</small></span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+
                 <!-- ============================================================== -->
                 <!-- End Right sidebar -->
                 <!-- ============================================================== -->

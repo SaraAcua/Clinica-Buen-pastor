@@ -38,7 +38,7 @@
     include '../controlador/confi.php';
     session_start();
 
-    if (isset($_SESSION['usuario'])) {
+    if (isset($_SESSION['Usuario']) ) {
         if (isset($_GET['id'])) {
             $codigo = $_GET['id'];
 
@@ -149,8 +149,8 @@
                                                 <div class="col-md-12 justified-content-center align-content-center">
                                                     <img id="Img_Paciente" src="../assets/images/users/user_blanco.png"  height="140" width="140" alt="Imagen Usuario">
                                                     <div style="margin-top: 3%">
-                                                        <input type="file" id="btn_Subir_Imagen" class="form-control-file" accept="image/*" />
-                                                        <input id="txtimg64" name="foto" type="hidden"/>
+                                                        <input type="file" id="btn_Subir_Imagen" required  class="form-control-file" accept="image/*" />
+                                                        <input id="txtimg64" name="foto" required  type="hidden"/>
                                                     </div>
                                                 </div>
                                             <?php } else { ?>
@@ -177,13 +177,13 @@
                                                 <div class="form-group">
                                                     <label class="control-label">Nombre</label>
                                                     <?php if (isset($_GET["id"])) { ?>
-                                                    <input type="hidden"  name="codigo" value="<?php echo $_GET["id"]; ?>">
+                                                    <input type="hidden"  name="codigo" required  value="<?php echo $_GET["id"]; ?>">
                                                     <?php } ?>
 
                                                     <?php if (isset($_GET["id"])) { ?>
-                                                        <input type="text" id="nombre" value="<?php echo $nombre; ?>"  name="nombre" class="form-control" placeholder="nombre">
+                                                        <input type="text" id="nombre" value="<?php echo $nombre; ?>" required   name="nombre" class="form-control" placeholder="nombre">
                                                     <?php } else { ?>
-                                                        <input type="text" id="nombre" name="nombre" class="form-control" placeholder="nombre">
+                                                        <input type="text" id="nombre" name="nombre" class="form-control" required  placeholder="nombre">
                                                     <?php } ?>
                                                 </div>
                                             </div>
@@ -194,9 +194,9 @@
                                                     <label class="control-label" >Apellido</label>
 
                                                     <?php if (isset($_GET["id"])) { ?>
-                                                        <input type="text" id="apellido" name="apellido" value="<?php echo $apellido; ?>" class="form-control" placeholder="apellido">
+                                                        <input type="text" id="apellido" name="apellido" required  value="<?php echo $apellido; ?>" class="form-control" placeholder="apellido">
                                                     <?php } else { ?>
-                                                        <input type="text" id="apellido" name="apellido"  class="form-control" placeholder="apellido">
+                                                        <input type="text" id="apellido" name="apellido"  class="form-control" required  placeholder="apellido">
                                                     <?php } ?>
                                                 </div>
                                             </div>
@@ -208,9 +208,9 @@
                                                     <label class="control-label">Fecha nacimiento</label>
 
                                                     <?php if (isset($_GET["id"])) { ?>
-                                                        <input type="date"   name="fecha_nacimiento" value="<?php echo $fecha_nacimiento; ?>" class="form-control" placeholder="dd/mm/yyyy">
+                                                        <input type="date"  required  name="fecha_nacimiento" value="<?php echo $fecha_nacimiento; ?>" class="form-control" placeholder="dd/mm/yyyy">
                                                     <?php } else { ?>
-                                                        <input type="date"   name="fecha_nacimiento" class="form-control" placeholder="dd/mm/yyyy">
+                                                        <input type="date"   name="fecha_nacimiento" class="form-control" required  placeholder="dd/mm/yyyy">
                                                     <?php } ?>
                                                 </div>
                                             </div>
@@ -219,9 +219,9 @@
                                                 <label for="inputZip">Edad</label>
 
                                                 <?php if (isset($_GET["id"])) { ?>
-                                                    <input type="number" name="edad" value="<?php echo $edad; ?>" min="0" max="150" class="form-control" id="edad">
+                                                    <input type="number" name="edad" required  value="<?php echo $edad; ?>" min="0" max="150" class="form-control" id="edad">
                                                 <?php } else { ?>
-                                                    <input type="number" name="edad" min="0" max="150" class="form-control" id="edad">
+                                                    <input type="number" required  name="edad" min="0" max="150" class="form-control" id="edad">
                                                 <?php } ?>
                                             </div>
 
@@ -287,9 +287,9 @@
                                                 <div class="form-group">
                                                     <label>Direccion</label>
                                                     <?php if (isset($_GET["id"])) { ?>
-                                                        <input type="text" id="direccion" name="direccion" value="<?php echo $direccion; ?>" class="form-control">
+                                                        <input type="text" id="direccion" required  name="direccion" value="<?php echo $direccion; ?>" class="form-control">
                                                     <?php } else { ?>
-                                                        <input type="text" id="direccion" name="direccion" class="form-control">
+                                                        <input type="text" id="direccion" required name="direccion" class="form-control">
                                                     <?php } ?>
                                                 </div>
                                             </div>
@@ -299,9 +299,9 @@
                                                 <div class="form-group">
                                                     <label>Barrio</label>
                                                     <?php if (isset($_GET["id"])) { ?>
-                                                        <input type="text" id="barrio" value="<?php echo $barrio; ?>" name="barrio" class="form-control">|
+                                                        <input type="text" id="barrio" required  value="<?php echo $barrio; ?>" name="barrio" class="form-control">|
                                                     <?php } else { ?>
-                                                        <input type="text" id="barrio" name="barrio" class="form-control">
+                                                        <input type="text" id="barrio" required  name="barrio" class="form-control">
                                                     <?php } ?>
                                                 </div>
                                             </div>
@@ -310,9 +310,9 @@
                                                 <div class="form-group">
                                                     <label>Telefono</label>
                                                     <?php if (isset($_GET["id"])) { ?>
-                                                        <input type="text" id="telefono" value="<?php echo $telefono; ?>" name="telefono" class="form-control">
+                                                        <input type="text" id="telefono" required  value="<?php echo $telefono; ?>" name="telefono" class="form-control">
                                                     <?php } else { ?>
-                                                        <input type="text" id="telefono" name="telefono" class="form-control">
+                                                        <input type="text" id="telefono" required name="telefono" class="form-control">
                                                     <?php } ?>
                                                 </div>
                                             </div>

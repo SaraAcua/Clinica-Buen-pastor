@@ -38,7 +38,7 @@
     include '../controlador/confi.php';
     session_start();
 
-    if (isset($_SESSION['Usuario'])  && $_SESSION['Usuario'] === 'admin') {
+    if (isset($_SESSION['Usuario']) ) {
         if (isset($_GET['id'])) {
             $codigo = $_GET['id'];
 
@@ -331,7 +331,7 @@
                                             <?php } else { ?>
                                                 <?php if (!empty($foto)) { ?>
                                                     <div class="col-md-12 justified-content-center align-content-center">
-                                                        <img id="Img_Personal" src="<?php echo $foto; ?>"  height="140" width="140" alt="Imagen Usuario">
+                                                        <img id="Img_Personal"  src="<?php echo $foto; ?>"  height="140" width="140" alt="Imagen Usuario">
                                                         <div style="margin-top: 3%">
                                                             <input type="file" id="btn_Subir_Imagen" class="form-control-file" accept="image/*" />
                                                             <input id="txtimg64" value="<?php echo $foto; ?>" name="foto" type="hidden"/>
