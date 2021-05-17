@@ -100,7 +100,7 @@
                                     </li>
                                
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="/controlador/cerrarsesion.php"><i class="fa fa-power-off"></i> Cerrar sesiòn</a></li>
+                                    <li><a href="../controlador/cerrarsesion.php"><i class="fa fa-power-off"></i> Cerrar sesiòn</a></li>
                                 </ul>
                             </div>
                         </li>

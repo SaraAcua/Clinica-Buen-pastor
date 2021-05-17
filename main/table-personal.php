@@ -1,696 +1,358 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
-    <title>AdminWrap - Easy to Customize Bootstrap 4 Admin Template</title>
-    <!-- Bootstrap Core CSS -->
-    <link href="../assets/node_modules/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Footable CSS -->
-    <link href="../assets/node_modules/footable/css/footable.core.css" rel="stylesheet">
-    <link href="../assets/node_modules/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" />
-    <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
-    <!-- page css -->
-    <link href="css/pages/footable-page.css" rel="stylesheet">
-    <!-- You can change the theme colors from here -->
-    <link href="css/colors/default.css" id="theme" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!-- Favicon icon -->
+        <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+        <title>AdminWrap - Easy to Customize Bootstrap 4 Admin Template</title>
+        <!-- Bootstrap Core CSS -->
+        <link href="../assets/node_modules/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Footable CSS -->
+        <link href="../assets/node_modules/footable/css/footable.core.css" rel="stylesheet">
+        <link href="../assets/node_modules/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" />
+        <!-- Custom CSS -->
+        <link href="css/style.css" rel="stylesheet">
+        <!-- page css -->
+        <link href="css/pages/footable-page.css" rel="stylesheet">
+        <!-- You can change the theme colors from here -->
+        <link href="css/colors/default.css" id="theme" rel="stylesheet">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    </head>
+      <?php
+    session_start();
 
-<body class="fix-header card-no-border fix-sidebar">
-    <!-- ============================================================== -->
-    <!-- Preloader - style you can find in spinners.css -->
-    <!-- ============================================================== -->
-    <div class="preloader">
-        <div class="loader">
-            <div class="loader__figure"></div>
-            <p class="loader__label">Admin Wrap</p>
+//if(isset($_SESSION['usuario']))
+//{
+//} else{
+//header('Location: index.php');
+//}
+    ?>
+
+    <body class="fix-header card-no-border fix-sidebar">
+        <!-- ============================================================== -->
+        <!-- Preloader - style you can find in spinners.css -->
+        <!-- ============================================================== -->
+        <div class="preloader">
+            <div class="loader">
+                <div class="loader__figure"></div>
+                <p class="loader__label">Clinica buen pastor</p>
+            </div>
         </div>
-    </div>
-    <!-- ============================================================== -->
-    <!-- Main wrapper - style you can find in pages.scss -->
-    <!-- ============================================================== -->
-    <div id="main-wrapper">
         <!-- ============================================================== -->
-        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- Main wrapper - style you can find in pages.scss -->
         <!-- ============================================================== -->
-        <header class="topbar">
-            <nav class="navbar top-navbar navbar-expand-md navbar-light">
-                <!-- ============================================================== -->
-                <!-- Logo -->
-                <!-- ============================================================== -->
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">
-                        <!-- Logo icon --><b>
-                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                            <!-- Dark Logo icon -->
-                            <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
-                            <!-- Light Logo icon -->
-                            <img src="../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
-                        </b>
-                        <!--End Logo icon -->
-                        <!-- Logo text --><span>
-                         <!-- dark Logo text -->
-                         <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
-                         <!-- Light Logo text -->    
-                         <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
-                </div>
-                <!-- ============================================================== -->
-                <!-- End Logo -->
-                <!-- ============================================================== -->
-                <div class="navbar-collapse">
-                    <!-- ============================================================== -->
-                    <!-- toggle and nav items -->
-                    <!-- ============================================================== -->
-                    <ul class="navbar-nav mr-auto">
-                        <!-- This is  -->
-                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i class="sl-icon-menu"></i></a> </li>
-                        <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="sl-icon-menu"></i></a> </li>
-                        <!-- ============================================================== -->
-                        <!-- Search -->
-                        <!-- ============================================================== -->
-                        <li class="nav-item hidden-xs-down search-box"> <a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="icon-Magnifi-Glass2"></i></a>
-                            <form class="app-search">
-                                <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
-                        </li>
-                    </ul>
-                    <!-- ============================================================== -->
-                    <!-- User profile and search -->
-                    <!-- ============================================================== -->
-                    <ul class="navbar-nav my-lg-0">
-                        <!-- ============================================================== -->
-                        <!-- Comment -->
-                        <!-- ============================================================== -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="icon-Bell"></i>
-                                <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right mailbox animated bounceInDown">
-                                <ul>
-                                    <li>
-                                        <div class="drop-title">Notifications</div>
-                                    </li>
-                                    <li>
-                                        <div class="message-center">
-                                            <!-- Message -->
-                                            <a href="#">
-                                                <div class="btn btn-danger btn-circle"><i class="fa fa-link"></i></div>
-                                                <div class="mail-contnet">
-                                                    <h5>Luanch Admin</h5> <span class="mail-desc">Just see the my new admin!</span> <span class="time">9:30 AM</span> </div>
-                                            </a>
-                                            <!-- Message -->
-                                            <a href="#">
-                                                <div class="btn btn-success btn-circle"><i class="ti-calendar"></i></div>
-                                                <div class="mail-contnet">
-                                                    <h5>Event today</h5> <span class="mail-desc">Just a reminder that you have event</span> <span class="time">9:10 AM</span> </div>
-                                            </a>
-                                            <!-- Message -->
-                                            <a href="#">
-                                                <div class="btn btn-info btn-circle"><i class="ti-settings"></i></div>
-                                                <div class="mail-contnet">
-                                                    <h5>Settings</h5> <span class="mail-desc">You can customize this template as you want</span> <span class="time">9:08 AM</span> </div>
-                                            </a>
-                                            <!-- Message -->
-                                            <a href="#">
-                                                <div class="btn btn-primary btn-circle"><i class="ti-user"></i></div>
-                                                <div class="mail-contnet">
-                                                    <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span> </div>
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link text-center" href="javascript:void(0);"> <strong>Check all notifications</strong> <i class="fa fa-angle-right"></i> </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <!-- ============================================================== -->
-                        <!-- End Comment -->
-                        <!-- ============================================================== -->
-                        <!-- ============================================================== -->
-                        <!-- Messages -->
-                        <!-- ============================================================== -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="icon-Mail"></i>
-                                <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
-                            </a>
-                            <div class="dropdown-menu mailbox dropdown-menu-right animated bounceInDown" aria-labelledby="2">
-                                <ul>
-                                    <li>
-                                        <div class="drop-title">You have 4 new messages</div>
-                                    </li>
-                                    <li>
-                                        <div class="message-center">
-                                            <!-- Message -->
-                                            <a href="#">
-                                                <div class="user-img"> <img src="../assets/images/users/1.jpg" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
-                                                <div class="mail-contnet">
-                                                    <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:30 AM</span> </div>
-                                            </a>
-                                            <!-- Message -->
-                                            <a href="#">
-                                                <div class="user-img"> <img src="../assets/images/users/2.jpg" alt="user" class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
-                                                <div class="mail-contnet">
-                                                    <h5>Sonu Nigam</h5> <span class="mail-desc">I've sung a song! See you at</span> <span class="time">9:10 AM</span> </div>
-                                            </a>
-                                            <!-- Message -->
-                                            <a href="#">
-                                                <div class="user-img"> <img src="../assets/images/users/3.jpg" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
-                                                <div class="mail-contnet">
-                                                    <h5>Arijit Sinh</h5> <span class="mail-desc">I am a singer!</span> <span class="time">9:08 AM</span> </div>
-                                            </a>
-                                            <!-- Message -->
-                                            <a href="#">
-                                                <div class="user-img"> <img src="../assets/images/users/4.jpg" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
-                                                <div class="mail-contnet">
-                                                    <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span> </div>
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link text-center" href="javascript:void(0);"> <strong>See all e-Mails</strong> <i class="fa fa-angle-right"></i> </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <!-- ============================================================== -->
-                        <!-- End Messages -->
-                        <!-- ============================================================== -->
-                        <!-- ============================================================== -->
-                        <!-- mega menu -->
-                        <!-- ============================================================== -->
-                        <li class="nav-item dropdown mega-dropdown"> <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-Box-Close"></i></a>
-                            <div class="dropdown-menu animated bounceInDown">
-                                <ul class="mega-dropdown-menu row">
-                                    <li class="col-lg-3 col-xlg-2 m-b-30">
-                                        <h4 class="m-b-20">CAROUSEL</h4>
-                                        <!-- CAROUSEL -->
-                                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                                            <div class="carousel-inner" role="listbox">
-                                                <div class="carousel-item active">
-                                                    <div class="container"> <img class="d-block img-fluid" src="../assets/images/big/img1.jpg" alt="First slide"></div>
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <div class="container"><img class="d-block img-fluid" src="../assets/images/big/img2.jpg" alt="Second slide"></div>
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <div class="container"><img class="d-block img-fluid" src="../assets/images/big/img3.jpg" alt="Third slide"></div>
-                                                </div>
-                                            </div>
-                                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a>
-                                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
-                                        </div>
-                                        <!-- End CAROUSEL -->
-                                    </li>
-                                    <li class="col-lg-3 m-b-30">
-                                        <h4 class="m-b-20">ACCORDION</h4>
-                                        <!-- Accordian -->
-                                        <div id="accordion" class="nav-accordion" role="tablist" aria-multiselectable="true">
-                                            <div class="card">
-                                                <div class="card-header" role="tab" id="headingOne">
-                                                    <h5 class="mb-0">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                  Collapsible Group Item #1
-                                                </a>
-                                              </h5> </div>
-                                                <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
-                                                    <div class="card-body"> Anim pariatur cliche reprehenderit, enim eiusmod high. </div>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-header" role="tab" id="headingTwo">
-                                                    <h5 class="mb-0">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                  Collapsible Group Item #2
-                                                </a>
-                                              </h5> </div>
-                                                <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                                    <div class="card-body"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. </div>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-header" role="tab" id="headingThree">
-                                                    <h5 class="mb-0">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                  Collapsible Group Item #3
-                                                </a>
-                                              </h5> </div>
-                                                <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
-                                                    <div class="card-body"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="col-lg-3  m-b-30">
-                                        <h4 class="m-b-20">CONTACT US</h4>
-                                        <!-- Contact -->
-                                        <form>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="exampleInputname1" placeholder="Enter Name"> </div>
-                                            <div class="form-group">
-                                                <input type="email" class="form-control" placeholder="Enter email"> </div>
-                                            <div class="form-group">
-                                                <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Message"></textarea>
-                                            </div>
-                                            <button type="submit" class="btn btn-info">Submit</button>
-                                        </form>
-                                    </li>
-                                    <li class="col-lg-3 col-xlg-4 m-b-30">
-                                        <h4 class="m-b-20">List style</h4>
-                                        <!-- List style -->
-                                        <ul class="list-style-none">
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> You can give link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> Give link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> Another Give link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> Forth link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> Another fifth link</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <!-- ============================================================== -->
-                        <!-- End mega menu -->
-                        <!-- ============================================================== -->
-                        <!-- ============================================================== -->
-                        <!-- Language -->
-                        <!-- ============================================================== -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="flag-icon flag-icon-us"></i></a>
-                            <div class="dropdown-menu dropdown-menu-right animated bounceInDown"> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-in"></i> India</a> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-fr"></i> French</a> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-cn"></i> China</a> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-de"></i> Dutch</a> </div>
-                        </li>
-                        <!-- ============================================================== -->
-                        <!-- Profile -->
-                        <!-- ============================================================== -->
-                        <li class="nav-item dropdown u-pro">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/images/users/1.jpg" alt="user" class="" /> <span class="hidden-md-down">Mark Sanders &nbsp;<i class="fa fa-angle-down"></i></span> </a>
-                            <div class="dropdown-menu dropdown-menu-right animated flipInY">
-                                <ul class="dropdown-user">
-                                    <li>
-                                        <div class="dw-user-box">
-                                            <div class="u-img"><img src="../assets/images/users/1.jpg" alt="user"></div>
-                                            <div class="u-text">
-                                                <h4>Steave Jobs</h4>
-                                                <p class="text-muted">varun@gmail.com</p><a href="pages-profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
-                                        </div>
-                                    </li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
-                                    <li><a href="#"><i class="ti-wallet"></i> My Balance</a></li>
-                                    <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-        <!-- ============================================================== -->
-        <!-- End Topbar header -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-        <?php 
-         include 'Include/sidebar_admin.php';
-        ?>
-        <!-- ============================================================== -->
-        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page wrapper  -->
-        <!-- ============================================================== -->
-        <div class="page-wrapper">
+        <div id="main-wrapper">
             <!-- ============================================================== -->
-            <!-- Container fluid  -->
+            <!-- Topbar header - style you can find in pages.scss -->
             <!-- ============================================================== -->
-            <div class="container-fluid">
-                <!-- ============================================================== -->
-                <!-- Bread crumb and right sidebar toggle -->
-                <!-- ============================================================== -->
-                <div class="row page-titles">
-                    <div class="col-md-5 align-self-center">
-                        <h3 class="text-themecolor">Listado pacientes</h3>
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Listado pacientes</li>
-                        </ol>
+              <header class="topbar">
+                <?php
+                include './Include/header.php';
+                ?>
+
+                <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="index.php">
+                            <!-- Logo icon --><b>
+                                <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                                <!-- Dark Logo icon -->
+                                <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                                <!-- Light Logo icon -->
+                                <img src="../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                            </b>
+                            <!--End Logo icon -->
+                            <!-- Logo text --><span>
+                                <!-- dark Logo text -->
+                                <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                                <!-- Light Logo text -->    
+                                <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
                     </div>
-                    <div class="col-md-7 align-self-center text-right d-none d-md-block">
-                        
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <div class="navbar-collapse">
+                        <!-- ============================================================== -->
+                        <!-- toggle and nav items -->
+                        <!-- ============================================================== -->
+                        <ul class="navbar-nav mr-auto">
+                            <!-- This is  -->
+                            <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i class="sl-icon-menu"></i></a> </li>
+                            <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="sl-icon-menu"></i></a> </li>
+                            <!-- ============================================================== -->
+                            <!-- Search -->
+                            <!-- ============================================================== -->
+                            <li class="nav-item hidden-xs-down search-box"> <a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="icon-Magnifi-Glass2"></i></a>
+                                <form class="app-search">
+                                    <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
+                            </li>
+                        </ul>
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                        <ul class="navbar-nav my-lg-0">
+                            <!-- ============================================================== -->
+                            <!-- Comment -->
+                            <!-- ============================================================== -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="icon-Bell"></i>
+                                    <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right mailbox animated bounceInDown">
+                                    <ul>
+                                        <li>
+                                            <div class="drop-title">Notifications</div>
+                                        </li>
+                                        <li>
+                                            <div class="message-center">
+                                                <!-- Message -->
+                                                <a href="#">
+                                                    <div class="btn btn-danger btn-circle"><i class="fa fa-link"></i></div>
+                                                    <div class="mail-contnet">
+                                                        <h5>Luanch Admin</h5> <span class="mail-desc">Just see the my new admin!</span> <span class="time">9:30 AM</span> </div>
+                                                </a>
+                                                <!-- Message -->
+                                                <a href="#">
+                                                    <div class="btn btn-success btn-circle"><i class="ti-calendar"></i></div>
+                                                    <div class="mail-contnet">
+                                                        <h5>Event today</h5> <span class="mail-desc">Just a reminder that you have event</span> <span class="time">9:10 AM</span> </div>
+                                                </a>
+                                                <!-- Message -->
+                                                <a href="#">
+                                                    <div class="btn btn-info btn-circle"><i class="ti-settings"></i></div>
+                                                    <div class="mail-contnet">
+                                                        <h5>Settings</h5> <span class="mail-desc">You can customize this template as you want</span> <span class="time">9:08 AM</span> </div>
+                                                </a>
+                                                <!-- Message -->
+                                                <a href="#">
+                                                    <div class="btn btn-primary btn-circle"><i class="ti-user"></i></div>
+                                                    <div class="mail-contnet">
+                                                        <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span> </div>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link text-center" href="javascript:void(0);"> <strong>Check all notifications</strong> <i class="fa fa-angle-right"></i> </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- ============================================================== -->
+                            <!-- End Comment -->
+                            <!-- ============================================================== -->
+                            <!-- ============================================================== -->
+                            <!-- Messages -->
+                            <!-- ============================================================== -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="icon-Mail"></i>
+                                    <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+                                </a>
+
+                            </li>
+                            <!-- ============================================================== -->
+                            <!-- End Messages -->
+                            <!-- ============================================================== -->
+                            <!-- ============================================================== -->
+                            <!-- mega menu -->
+                            <!-- ============================================================== -->
+
+                            <!-- ============================================================== -->
+                            <!-- End mega menu -->
+                            <!-- ============================================================== -->
+                            <!-- ============================================================== -->
+                            <!-- Language -->
+                            <!-- ============================================================== -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="flag-icon flag-icon-us"></i></a>
+                                <div class="dropdown-menu dropdown-menu-right animated bounceInDown"> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-in"></i> India</a> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-fr"></i> French</a> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-cn"></i> China</a> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-de"></i> Dutch</a> </div>
+                            </li>
+                            <!-- ============================================================== -->
+                            <!-- Profile -->
+                            <!-- ============================================================== -->
+                            <li class="nav-item dropdown u-pro">
+                                <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/images/users/1.jpg" alt="user" class="" /> <span class="hidden-md-down">Mark Sanders &nbsp;<i class="fa fa-angle-down"></i></span> </a>
+                                <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                                    <ul class="dropdown-user">
+
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="">
-                        <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
+                </nav>
+            </header>
+            <!-- ============================================================== -->
+            <!-- End Topbar header -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Left Sidebar - style you can find in sidebar.scss  -->
+            <!-- ============================================================== -->
+            <?php
+            include 'Include/sidebar_admin.php';
+            ?>
+            <!-- ============================================================== -->
+            <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Page wrapper  -->
+            <!-- ============================================================== -->
+            <div class="page-wrapper">
+                <!-- ============================================================== -->
+                <!-- Container fluid  -->
+                <!-- ============================================================== -->
+                <div class="container-fluid">
+                    <!-- ============================================================== -->
+                    <!-- Bread crumb and right sidebar toggle -->
+                    <!-- ============================================================== -->
+                    <div class="row page-titles">
+                        <div class="col-md-5 align-self-center">
+                            <h3 class="text-themecolor">Listado personal</h3>
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                                <li class="breadcrumb-item active">Listado personal de salud</li>
+                            </ol>
+                        </div>
+                        <div class="col-md-7 align-self-center text-right d-none d-md-block">
+
+                        </div>
+                        <div class="">
+                            <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
+                        </div>
                     </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- End Bread crumb and right sidebar toggle -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Start Page Content -->
-                <!-- ============================================================== -->
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Pacientes</h4>
-                                <h6 class="card-subtitle"></h6>
-                                <div class="table-responsive">
-                                    <table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list" data-page-size="12">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Foto</th>
-                                                <th>Nombre</th>
-                                                <th>Apellido</th>
-                                                <th>Fecha Nc</th>
-                                                <th>Edad</th>
-                                                <th>Direccion</th>
-                                                <th>Telefono</th>
-                                                <th>Ciudad</th>
-                                                <th>Estado</th>
-                                                <th>Acciones</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>
-                                                    <a href="javascript:void(0)"><img src="../assets/images/users/4.jpg" alt="user" width="40" class="img-circle" /> Genelia Deshmukh</a>
-                                                </td>
-                                                <td>genelia@gmail.com</td>
-                                                <td>+123 456 789</td>
-                                                <td><span class="label label-danger">Designer</span> </td>
-                                                <td>23</td>
-                                                <td>12-10-2014</td>
-                                                <td>$1200</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>
-                                                    <a href="javascript:void(0)"><img src="../assets/images/users/5.jpg" alt="user" width="40" class="img-circle" /> Arijit Singh</a>
-                                                </td>
-                                                <td>arijit@gmail.com</td>
-                                                <td>+234 456 789</td>
-                                                <td><span class="label label-info">Developer</span> </td>
-                                                <td>26</td>
-                                                <td>10-09-2014</td>
-                                                <td>$1800</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>
-                                                    <a href="javascript:void(0)"><img src="../assets/images/users/6.jpg" alt="user" width="40" class="img-circle" /> Govinda jalan</a>
-                                                </td>
-                                                <td>govinda@gmail.com</td>
-                                                <td>+345 456 789</td>
-                                                <td><span class="label label-success">Accountant</span></td>
-                                                <td>28</td>
-                                                <td>1-10-2013</td>
-                                                <td>$2200</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
+                    <!-- ============================================================== -->
+                    <!-- End Bread crumb and right sidebar toggle -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Start Page Content -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Personal</h4>
+                                    <h6 class="card-subtitle"></h6>
+                                    <div class="table-responsive">
+                                        <table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list" data-page-size="12">
+                                            <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>Foto</th>
+                                                    <th>Nombre</th>
+                                                    <th>Apellido</th>
+                                                    <th>Tipo</th>
+                                                    <th>Estado</th>
+                                                    <th>Trabajando</th>
+                                                    <th>Acciones</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                <?php
+                                                include '../controlador/list-personal.php';
+                                                ?>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <button type="button" class="btn btn-info btn-rounded" data-toggle="modal" data-target="#add-contact">Add Nuevo personal</button>
+                                                    </td>
                                           
-                                           
-                                            <tr>
-                                                <td>6</td>
-                                                <td>
-                                                    <a href="javascript:void(0)"><img src="../assets/images/users/1.jpg" alt="user" width="40" class="img-circle" /> Pawandeep kumar</a>
-                                                </td>
-                                                <td>pawandeep@gmail.com</td>
-                                                <td>+678 456 789</td>
-                                                <td><span class="label label-warning">Chairman</span></td>
-                                                <td>29</td>
-                                                <td>10-5-2013</td>
-                                                <td>$1500</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>7</td>
-                                                <td>
-                                                    <a href="javascript:void(0)"><img src="../assets/images/users/2.jpg" alt="user" width="40" class="img-circle" /> Ritesh Deshmukh</a>
-                                                </td>
-                                                <td>ritesh@gmail.com</td>
-                                                <td>+123 456 789</td>
-                                                <td><span class="label label-danger">Designer</span></td>
-                                                <td>35</td>
-                                                <td>05-10-2012</td>
-                                                <td>$3200</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>8</td>
-                                                <td>
-                                                    <a href="javascript:void(0)"><img src="../assets/images/users/2.jpg" alt="user" width="40" class="img-circle" /> Salman Khan</a>
-                                                </td>
-                                                <td>salman@gmail.com</td>
-                                                <td>+234 456 789</td>
-                                                <td><span class="label label-info">Developer</span></td>
-                                                <td>27</td>
-                                                <td>11-10-2014</td>
-                                                <td>$1800</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>9</td>
-                                                <td>
-                                                    <a href="javascript:void(0)"><img src="../assets/images/users/3.jpg" alt="user" width="40" class="img-circle" /> Govinda jalan</a>
-                                                </td>
-                                                <td>govinda@gmail.com</td>
-                                                <td>+345 456 789</td>
-                                                <td><span class="label label-success">Accountant</span></td>
-                                                <td>18</td>
-                                                <td>12-5-2017</td>
-                                                <td>$100</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>10</td>
-                                                <td>
-                                                    <a href="javascript:void(0)"><img src="../assets/images/users/4.jpg" alt="user" width="40" class="img-circle" /> Sonu Nigam</a>
-                                                </td>
-                                                <td>sonu@gmail.com</td>
-                                                <td>+456 456 789</td>
-                                                <td><span class="label label-inverse">HR</span></td>
-                                                <td>36</td>
-                                                <td>18-5-2009</td>
-                                                <td>$4200</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>11</td>
-                                                <td>
-                                                    <a href="javascript:void(0)"><img src="../assets/images/users/5.jpg" alt="user" width="40" class="img-circle" /> Varun Dhawan</a>
-                                                </td>
-                                                <td>varun@gmail.com</td>
-                                                <td>+567 456 789</td>
-                                                <td><span class="label label-danger">Manager</span></td>
-                                                <td>43</td>
-                                                <td>12-10-2010</td>
-                                                <td>$5200</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>12</td>
-                                                <td>
-                                                    <a href="javascript:void(0)"><img src="../assets/images/users/6.jpg" alt="user" width="40" class="img-circle" /> Genelia Deshmukh</a>
-                                                </td>
-                                                <td>genelia@gmail.com</td>
-                                                <td>+123 456 789</td>
-                                                <td><span class="label label-danger">Designer</span> </td>
-                                                <td>23</td>
-                                                <td>12-10-2014</td>
-                                                <td>$1200</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>13</td>
-                                                <td>
-                                                    <a href="javascript:void(0)"><img src="../assets/images/users/7.jpg" alt="user" width="40" class="img-circle" /> Arijit Singh</a>
-                                                </td>
-                                                <td>arijit@gmail.com</td>
-                                                <td>+234 456 789</td>
-                                                <td><span class="label label-info">Developer</span> </td>
-                                                <td>26</td>
-                                                <td>10-09-2014</td>
-                                                <td>$1800</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>14</td>
-                                                <td>
-                                                    <a href="javascript:void(0)"><img src="../assets/images/users/8.jpg" alt="user" width="40" class="img-circle" /> Govinda jalan</a>
-                                                </td>
-                                                <td>govinda@gmail.com</td>
-                                                <td>+345 456 789</td>
-                                                <td><span class="label label-success">Accountant</span></td>
-                                                <td>28</td>
-                                                <td>1-10-2013</td>
-                                                <td>$2200</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <td colspan="2">
-                                                    <button type="button" class="btn btn-info btn-rounded" data-toggle="modal" data-target="#add-contact">Add New Contact</button>
-                                                </td>
-                                                <div id="add-contact" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                                <h4 class="modal-title" id="myModalLabel">Add New Contact</h4> </div>
-                                                            <div class="modal-body">
-                                                                <from class="form-horizontal form-material">
-                                                                    <div class="form-group">
-                                                                        <div class="col-md-12 m-b-20">
-                                                                            <input type="text" class="form-control" placeholder="Type name"> </div>
-                                                                        <div class="col-md-12 m-b-20">
-                                                                            <input type="text" class="form-control" placeholder="Email"> </div>
-                                                                        <div class="col-md-12 m-b-20">
-                                                                            <input type="text" class="form-control" placeholder="Phone"> </div>
-                                                                        <div class="col-md-12 m-b-20">
-                                                                            <input type="text" class="form-control" placeholder="Designation"> </div>
-                                                                        <div class="col-md-12 m-b-20">
-                                                                            <input type="text" class="form-control" placeholder="Age"> </div>
-                                                                        <div class="col-md-12 m-b-20">
-                                                                            <input type="text" class="form-control" placeholder="Date of joining"> </div>
-                                                                        <div class="col-md-12 m-b-20">
-                                                                            <input type="text" class="form-control" placeholder="Salary"> </div>
-                                                                        <div class="col-md-12 m-b-20">
-                                                                            <div class="fileupload btn btn-danger btn-rounded waves-effect waves-light"><span><i class="ion-upload m-r-5"></i>Upload Contact Image</span>
-                                                                                <input type="file" class="upload"> </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </from>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-info waves-effect" data-dismiss="modal">Save</button>
-                                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cancel</button>
-                                                            </div>
-                                                        </div>
-                                                        <!-- /.modal-content -->
-                                                    </div>
-                                                    <!-- /.modal-dialog -->
+                                            <td colspan="7">
+                                                <div class="text-right">
+                                                    <ul class="pagination"> </ul>
                                                 </div>
-                                                <td colspan="7">
-                                                    <div class="text-right">
-                                                        <ul class="pagination"> </ul>
-                                                    </div>
-                                                </td>
+                                            </td>
                                             </tr>
-                                        </tfoot>
-                                    </table>
+                                            </tfoot>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
+                            <!-- Column -->
+
+                            <!-- Column -->
+
+                            <!-- Column -->
+
+                            <!-- Column -->
+
                         </div>
-                        <!-- Column -->
-                      
-                        <!-- Column -->
-                        
-                        <!-- Column -->
-                      
-                        <!-- Column -->
-                       
                     </div>
+                    <!-- ============================================================== -->
+                    <!-- End PAge Content -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Right sidebar -->
+                    <!-- ============================================================== -->
+                    <!-- .right-sidebar -->
+
+                    <!-- ============================================================== -->
+                    <!-- End Right sidebar -->
+                    <!-- ============================================================== -->
                 </div>
                 <!-- ============================================================== -->
-                <!-- End PAge Content -->
+                <!-- End Container fluid  -->
                 <!-- ============================================================== -->
                 <!-- ============================================================== -->
-                <!-- Right sidebar -->
+                <!-- footer -->
                 <!-- ============================================================== -->
-                <!-- .right-sidebar -->
-               
+                <?php 
+        
+        include './Include/footer.php';
+        ?>
                 <!-- ============================================================== -->
-                <!-- End Right sidebar -->
+                <!-- End footer -->
                 <!-- ============================================================== -->
             </div>
             <!-- ============================================================== -->
-            <!-- End Container fluid  -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
-            <footer class="footer"> © 2017 Adminwrap by wrappixel.com </footer>
-            <!-- ============================================================== -->
-            <!-- End footer -->
+            <!-- End Page wrapper  -->
             <!-- ============================================================== -->
         </div>
         <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
+        <!-- End Wrapper -->
         <!-- ============================================================== -->
-    </div>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
-    <script src="../assets/node_modules/jquery/jquery.min.js"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <script src="../assets/node_modules/bootstrap/js/popper.min.js"></script>
-    <script src="../assets/node_modules/bootstrap/js/bootstrap.min.js"></script>
-    <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="../assets/node_modules/ps/perfect-scrollbar.jquery.min.js"></script>
-    <!--Wave Effects -->
-    <script src="js/waves.js"></script>
-    <!--Menu sidebar -->
-    <script src="js/sidebarmenu.js"></script>
-    <!--Custom JavaScript -->
-    <script src="js/custom.min.js"></script>
-    <!-- Footable -->
-    <script src="../assets/node_modules/footable/js/footable.all.min.js"></script>
-    <!--FooTable init-->
-    <script src="js/footable-init.js"></script>
-    <!-- ============================================================== -->
-    <!-- Style switcher -->
-    <!-- ============================================================== -->
-    <script src="../assets/node_modules/styleswitcher/jQuery.style.switcher.js"></script>
-</body>
+        <!-- ============================================================== -->
+        <!-- All Jquery -->
+        <!-- ============================================================== -->
+        <script src="../assets/node_modules/jquery/jquery.min.js"></script>
+        <!-- Bootstrap tether Core JavaScript -->
+        <script src="../assets/node_modules/bootstrap/js/popper.min.js"></script>
+        <script src="../assets/node_modules/bootstrap/js/bootstrap.min.js"></script>
+        <!-- slimscrollbar scrollbar JavaScript -->
+        <script src="../assets/node_modules/ps/perfect-scrollbar.jquery.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        import swal from 'sweetalert';
+        <!--Wave Effects -->
+        <script src="js/waves.js"></script>
+        <!--Menu sidebar -->
+        <script src="js/sidebarmenu.js"></script>
+        <!--Custom JavaScript -->
+        <script src="js/custom.min.js"></script>
+        <!-- Footable -->
+        <script src="../assets/node_modules/footable/js/footable.all.min.js"></script>
+        <!--FooTable init-->
+        <script src="js/footable-init.js"></script>
+        <!-- ============================================================== -->
+        <!-- Style switcher -->
+        <!-- ============================================================== -->
+        <script src="../assets/node_modules/styleswitcher/jQuery.style.switcher.js"></script>
+        <script src="js/jquery.validate.js"></script>
+        <script src="js/localization/messages_es.min.js"></script>
+        <script src="js/jquery.serializejson.js"></script>
+        <script src="../main/js/funciones/form-personal.js"></script>
+    </body>
 
 </html>

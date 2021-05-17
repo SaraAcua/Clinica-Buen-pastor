@@ -8,9 +8,8 @@
                         <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="icon-Car-Wheel"></i><span class="hide-menu">Gestiòn Citas <span </span></span></a>
                             <ul aria-expanded="false" class="collapse">
                         
-                                <li><a href="table-personal-citas.php">Listado de citas </a></li>
-                                
-
+                                <li><a href="table-citas.php">Listado de citas </a></li>
+                               
                              
                             </ul>
                         </li>

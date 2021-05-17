@@ -2,7 +2,7 @@
 
 
 
-session_start();
+//session_start();
 $host = "localhost"; 
 $user = "root"; 
 $password = "";

@@ -41,7 +41,7 @@ if ($accion == "Registrar") {
     }
 
     echo $json_string;
-} else {
+} else if("Actualizar") {
 
     $codigo = $_POST['codigo'];
     $nombre = $_POST['nombre'];
@@ -72,5 +72,26 @@ if ($accion == "Registrar") {
     }
 
     echo $json_string;
+}else{
+    
+    $codigo = $_POST['codigo'];
+    $sql_query = "DELETE FROM pacientes where codigo = ".$codigo;
+    echo $sql_query;
+    $result = mysqli_query($con, $sql_query);
+    if($result){
+        $data['estado'] = 'success';
+        $data['mensaje'] = 'Se ha eliminado correctamente el paciente !!!';
+        $json_string = json_encode($data);
+    } else {
+        $data['estado'] = 'error';
+        $data['mensaje'] = 'Ha ocurrido un error al eliminado el paciente !!!';
+        $json_string = json_encode($data);
+    }
+
+    echo $json_string;
 }
+
+
 ?>
+
+

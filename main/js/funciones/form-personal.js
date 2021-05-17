@@ -27,37 +27,30 @@ $(document).ready(function () {
                 url: '../controlador/personal.php',
                 type: 'post',
                 beforeSend: function () {
-                   
+
                     enablePreloader();
                 },
                 success: function (data) {
                     console.log(data);
-                     Limpiar();
-                    
-                    
-                    if (data.estado === "success") {
-                        disablePreloader();
-                        Swal.fire({
-                            title:  data.mensaje,
-                            icon: data.estado,
-                            confirmButtonText: 'ok'
-                        });
-                    } else {
-                        disablePreloader();
-                        clearResponseMessage();
-                       Swal.fire({
-                            title:  data.mensaje,
-                            icon: data.estado,
-                            confirmButtonText: 'ok'
-                        });
-                    }
+                    Limpiar();
+                    disablePreloader();
+                    Swal.fire({
+                        title: "Registro correcto",
+                        icon: "success",
+                        confirmButtonText: 'ok'
+                    });
                 },
                 error: function (e) {
                     console.log(data);
                     console.log(e.toString());
                     disablePreloader();
+                    disablePreloader();
                     clearResponseMessage();
-                    $("#request-message").append("<div style='text-aling:center;margin-top:2%' class='alert alert-danger col-lg-12 col-sm-12' role='alert'>" + data.mensaje + "</div>");
+                    Swal.fire({
+                        title: "Se presento un error",
+                        icon: "error",
+                        confirmButtonText: 'ok'
+                    });
                 }
             });
             return false;
@@ -83,16 +76,45 @@ $(document).ready(function () {
         $("#request-message").empty();
     }
 
-function Limpiar()
-{
-    $("#foto").val("");
-    $("#nombre").val("");
-    $("#apellido").val("");
-    $("#tipo").val("");
-    $("#trabajo").val("");
-    $("#estado").val("");
+    function Limpiar()
+    {
+        $("#foto").val("");
+        $("#nombre").val("");
+        $("#apellido").val("");
+        $("#tipo").val("");
+        $("#trabajo").val("");
+        $("#estado").val("");
 
-}
+    }
+
+
+    $(document).on("click", ".delete_personal", function () {
+        var id;
+        swal({
+            title: "Seguro que desea eliminar el registro?",
+            text: "Esta acción no podra ser revertida!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        }).then((willDelete) => {
+            if (willDelete) {
+                $(this).parents("tr").find("td").each(function () {
+                    if ($(this).hasClass("id_personal")) {
+                        id = $(this).text();
+                    }
+                });
+                console.log(id);
+                var formData = new FormData();
+                formData.append("accion", "EliminarP");
+            } else {
+                console.log("No entro");
+            }
+        });
+
+
+
+
+    });
 
 
 });

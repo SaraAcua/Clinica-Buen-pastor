@@ -104,7 +104,36 @@ $(document).ready(function () {
         $("#request-message").empty();
     }
 
+    $(document).on("click", ".delete_paciente", function () {
+        var id;
+        swal({
+            title: "Seguro que desea eliminar el registro?",
+            text: "Esta acción no podra ser revertida!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        }).then((willDelete) => {
+            if (willDelete) {
+                 $(this).parents("tr").find("td").each(function () {
+                     if($(this).hasClass("id_paciente")){
+                         id = $(this).text();
+                     }                    
+                });
+                console.log(id);
+                var formData = new FormData();
+                formData.append("accion", "EliminarP");
+            } else {
+                console.log("No entro");
+            }
+        });
 
+
+
+
+    });
 
 
 });
+
+
+

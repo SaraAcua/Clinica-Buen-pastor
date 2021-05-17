@@ -54,7 +54,7 @@ $(document).ready(function () {
                     enablePreloader();
                 },
                 success: function (data) {
-                    //console.log(data);
+                    console.log(data);
                     //console.log(data.estado);
                    if (data.estado === "success") {
                         disablePreloader();

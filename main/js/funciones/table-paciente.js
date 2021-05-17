@@ -5,9 +5,9 @@ $(document).ready(function () {
 
 
 function  listadopacientes() {
-
+    
+    
     $("#tablapacientes").DataTable({
-
         "ajax": {
             "url": '../controlador/list-paciente.php',
             dataSrc: ''
