@@ -19,7 +19,22 @@ if ($inc) {
                 <td><?php echo $tipo ?></td>
                 <td><?php echo $nombrePaciente ?></td>
                 <td><?php echo $fechaCita ?></td>
-                <td><?php echo $estadoCita ?></td>
+               
+                <td>
+                    <?php if ($estadoCita === 'En servicio') { ?>
+                        <span class="label label-info"><?php echo $estadoCita ?></span>
+                    <?php } else if ($estadoCita === 'Atendido') { ?>
+                        <span class="label label-success"><?php echo $estadoCita ?></span>
+                    <?php } else if ($estadoCita === 'Anulada') { ?>
+                        <span class="badge badge-danger"><?php echo $estadoCita ?></span>
+                    <?php } else if ($estadoCita === 'Asignado') { ?>
+                        <span class="label label-warning"><?php echo $estadoCita ?></span>
+                        <?php } else { ?>
+                        <span class="label label-danger"><?php echo $estadoCita ?></span>
+                    <?php } ?>
+                </td>
+
+
                 <td>         
                     <div class="btn-group" role="group" aria-label="Basic example">
                         <a href="form-citas.php?id=<?php echo $idCita ?>"><button   value="Actualizar" type="button" class="btn btn-success">Editar</button></a>

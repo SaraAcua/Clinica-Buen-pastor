@@ -488,7 +488,7 @@
                                                         <?php if (isset($_GET["id"])) { ?>
                                                             <input type="date" required readonly=""   name="fecha" value="<?php echo $fechaCita; ?>" class="form-control">
                                                         <?php } else { ?>
-                                                            <input type="date" required   name="fecha" class="form-control" placeholder="dd/mm/yyyy">
+                                                            <input type="date"   required   name="fecha" class="form-control" placeholder="dd/mm/yyyy">
                                                         <?php } ?>
                                                     </div>
                                                 </div>
