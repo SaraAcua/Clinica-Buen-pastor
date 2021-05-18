@@ -50,7 +50,7 @@
         <div class="preloader">
             <div class="loader">
                 <div class="loader__figure"></div>
-                <p class="loader__label">Admin Wrap</p>
+                <p class="loader__label">Clinica Buen pastor</p>
             </div>
         </div>
         <!-- ============================================================== -->
@@ -76,14 +76,14 @@
                                 <!-- Dark Logo icon -->
                                 <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
                                 <!-- Light Logo icon -->
-                                <img src="../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                                <img src="../assets/images/logoimg.png" alt="homepage" class="light-logo" />
                             </b>
                             <!--End Logo icon -->
                             <!-- Logo text --><span>
                                 <!-- dark Logo text -->
                                 <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
                                 <!-- Light Logo text -->    
-                                <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
+                                <img src="../assets/images/logoletra.png" class="light-logo" alt="homepage" /></span> </a>
                     </div>
                     <!-- ============================================================== -->
                     <!-- End Logo -->
@@ -249,7 +249,7 @@
                                     <h4 class="card-title">Pacientes</h4>
                                     <h6 class="card-subtitle"></h6>
                                     <div class="table-responsive ">
-                                        <table id="demo-foo-addrow"   id="tablapacientes" class="table  table-responsive-lg  m-t-30 table-hover contact-list" data-page-size="12">
+                                        <table  id="tablapacientes" class="table  table-responsive-lg  m-t-30 table-hover contact-list" data-page-size="12">
                                             <thead >
                                                 <tr >
                                                     <th >No</th>
@@ -267,34 +267,12 @@
                                                     
                                                 </tr>
                                             </thead>
-                                             <div class="m-t-40">
-                                        <div class="d-flex">
-                                          
-                                            <div class="ml-auto">
-                                                <div class="form-group">
-                                                    <input id="demo-input-search2" type="text" placeholder="Search" autocomplete="off">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                            
                                             <tbody>
                                                  <?php
                                                     include '../controlador/list-paciente.php';
                                                     ?>
                                                     </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <td colspan="2">
-                                                        <button href="form-layout.php" type="button" class="btn btn-info btn-rounded" data-toggle="modal" data-target="#add-contact">Add Nuevo paciente</button>
-                                                    </td>
-                                      
-                                            <td colspan="7">
-                                                <div class="text-right">
-                                                    <ul class="pagination"> </ul>
-                                                </div>
-                                            </td>
-                                            </tr>
-                                            </tfoot>
                                         </table>
                                     </div>
                                 </div>
@@ -365,8 +343,38 @@
         <!-- Style switcher -->
         <!-- ============================================================== -->
         <script src="../assets/node_modules/styleswitcher/jQuery.style.switcher.js"></script>
+        <!-- This is data table -->
         <script src="../assets/node_modules/datatables/jquery.dataTables.min.js"></script>
         <script src="js/funciones/table-paciente.js"></script>
+        <script>
+            $('#tablapacientes').DataTable({
+                "lengthMenu": [[15, 25, 50, 100, -1], [15, 25, 50, 100, "Todo"]],
+                language: {
+                    "sProcessing": "Procesando...",
+                    "sLengthMenu": "Mostrar _MENU_ registros",
+                    "sZeroRecords": "No se encontraron resultados",
+                    "sEmptyTable": "Ningún dato disponible en esta tabla",
+                    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Buscar:",
+                    "sUrl": "",
+                    "sInfoThousands": ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sLast": "Último",
+                        "sNext": "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                    },
+                },
+            });
+        </script>
 
     </body>
 

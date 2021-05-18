@@ -29,7 +29,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     </head>
-      <?php
+    <?php
     session_start();
 
 //if(isset($_SESSION['usuario']))
@@ -56,7 +56,7 @@
             <!-- ============================================================== -->
             <!-- Topbar header - style you can find in pages.scss -->
             <!-- ============================================================== -->
-              <header class="topbar">
+            <header class="topbar">
                 <?php
                 include './Include/header.php';
                 ?>
@@ -196,12 +196,18 @@
             </header>
             <!-- ============================================================== -->
             <!-- End Topbar header -->
+
             <!-- ============================================================== -->
             <!-- ============================================================== -->
             <!-- Left Sidebar - style you can find in sidebar.scss  -->
+
             <!-- ============================================================== -->
             <?php
-            include 'Include/sidebar_admin.php';
+            if ($_SESSION['Rol'] == "admin") {
+                include './Include/sidebar_admin.php';
+            } else {
+                include './Include/sidebar_personal.php';
+            }
             ?>
             <!-- ============================================================== -->
             <!-- End Left Sidebar - style you can find in sidebar.scss  -->
@@ -245,7 +251,7 @@
                                     <h4 class="card-title">Personal</h4>
                                     <h6 class="card-subtitle"></h6>
                                     <div class="table-responsive">
-                                        <table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list" data-page-size="12">
+                                        <table id="tablapersonal" class="table m-t-30 table-hover contact-list" data-page-size="12">
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
@@ -269,13 +275,13 @@
                                                     <td colspan="2">
                                                         <button type="button" class="btn btn-info btn-rounded" data-toggle="modal" data-target="#add-contact">Add Nuevo personal</button>
                                                     </td>
-                                          
-                                            <td colspan="7">
-                                                <div class="text-right">
-                                                    <ul class="pagination"> </ul>
-                                                </div>
-                                            </td>
-                                            </tr>
+
+                                                    <td colspan="7">
+                                                        <div class="text-right">
+                                                            <ul class="pagination"> </ul>
+                                                        </div>
+                                                    </td>
+                                                </tr>
                                             </tfoot>
                                         </table>
                                     </div>
@@ -309,10 +315,9 @@
                 <!-- ============================================================== -->
                 <!-- footer -->
                 <!-- ============================================================== -->
-                <?php 
-        
-        include './Include/footer.php';
-        ?>
+                <?php
+                include './Include/footer.php';
+                ?>
                 <!-- ============================================================== -->
                 <!-- End footer -->
                 <!-- ============================================================== -->
@@ -344,15 +349,46 @@
         <!-- Footable -->
         <script src="../assets/node_modules/footable/js/footable.all.min.js"></script>
         <!--FooTable init-->
+
         <script src="js/footable-init.js"></script>
         <!-- ============================================================== -->
         <!-- Style switcher -->
+        <script src="../assets/node_modules/datatables/jquery.dataTables.min.js"></script>
         <!-- ============================================================== -->
         <script src="../assets/node_modules/styleswitcher/jQuery.style.switcher.js"></script>
         <script src="js/jquery.validate.js"></script>
         <script src="js/localization/messages_es.min.js"></script>
         <script src="js/jquery.serializejson.js"></script>
         <script src="../main/js/funciones/form-personal.js"></script>
+        <script>
+            $('#tablapersonal').DataTable({
+                "lengthMenu": [[15, 25, 50, 100, -1], [15, 25, 50, 100, "Todo"]],
+                language: {
+                    "sProcessing": "Procesando...",
+                    "sLengthMenu": "Mostrar _MENU_ registros",
+                    "sZeroRecords": "No se encontraron resultados",
+                    "sEmptyTable": "Ningún dato disponible en esta tabla",
+                    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Buscar:",
+                    "sUrl": "",
+                    "sInfoThousands": ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sLast": "Último",
+                        "sNext": "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                    },
+                },
+            });
+        </script>
     </body>
 
 </html>

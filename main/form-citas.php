@@ -21,6 +21,8 @@
         <link href="../assets/node_modules/c3-master/c3.min.css" rel="stylesheet">
         <!--Toaster Popup message CSS -->
         <link href="../assets/node_modules/toast-master/css/jquery.toast.css" rel="stylesheet">
+        <!-- toast CSS -->
+        <link href="../assets/node_modules/toast-master/css/jquery.toast.css" rel="stylesheet">
         <!-- Custom CSS -->
         <link href="css/style.css" rel="stylesheet">
         <!-- Dashboard 1 Page CSS -->
@@ -35,14 +37,34 @@
     <![endif]-->
     </head>
     <?php
+    include '../controlador/confi.php';
     session_start();
-    error_reporting(0);
 
-//if(isset($_SESSION['usuario']))
-//{
-//} else{
-//header('Location: index.php');
-//}
+    if (isset($_SESSION['Usuario'])) {
+        if (isset($_GET['id'])) {
+            $codigo = $_GET['id'];
+
+            $sql = "select c.*,(select p.nombre from pacientes p where p.codigo = c.idpaciente) as nombrePaciente,(select p.apellido from pacientes p where p.codigo = c.idpaciente) as apellidoPaciente,(select per.nombre from personal per where per.codigo = c.idpersonal) as nombrePersonal,(select per.apellido from personal per where per.codigo = c.idpersonal) as apellidoPersonal,(select per.tipo from personal per where per.codigo = c.idpersonal) as tipoPersonal, c.id as idCita, c.fecha as fechaCita, c.estado as estadoCita  from citas c where c.id = " . $_GET['id'];
+
+            if (!$result = mysqli_query($con, $sql))
+                die();
+
+            $pacientes = array(); //creamos un array
+
+            while ($row = $result->fetch_assoc()) {
+                $idCita = $row['idCita'];
+                $idPaciente = $row['idpaciente'];
+                $idPersonal = $row['idpersonal'];
+                $nombrePersonal = $row['nombrePersonal'] . ' ' . $row['apellidoPersonal'];
+                $tipo = $row['tipoPersonal'];
+                $nombrePaciente = $row['nombrePaciente'] . ' ' . $row['apellidoPaciente'];
+                $fechaCita = $row['fechaCita'];
+                $estadoCita = $row['estadoCita'];
+            }
+        }
+    } else {
+        header('Location: index.php');
+    }
     ?>
 
     <body class="fix-header fix-sidebar card-no-border">
@@ -341,15 +363,21 @@
                     </div>
                 </nav>
             </header>
+           
             <!-- ============================================================== -->
             <!-- End Topbar header -->
+               <?php
+            if ($_SESSION['Rol'] == "admin") {
+                include './Include/sidebar_admin.php';
+            } else {
+                include './Include/sidebar_personal.php';
+            }
+            ?>
             <!-- ============================================================== -->
             <!-- ============================================================== -->
             <!-- Left Sidebar - style you can find in sidebar.scss  -->
             <!-- ============================================================== -->
-            <?php
-            include 'Include/sidebar_admin.php';
-            ?>
+          
             <!-- ============================================================== -->
             <!-- End Left Sidebar - style you can find in sidebar.scss  -->
             <!-- ============================================================== -->
@@ -390,38 +418,62 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header bg-info">
-                                    <h4 class="m-b-0 text-white">Formulario de regsitro</h4>
+                                    <h4 class="m-b-0 text-white">Formulario de registro</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form action="#">
+                                    <form id="form-cita" action="#">
                                         <div class="form-body">
                                             <h3 class="card-title">Informacion de la cita</h3>
                                             <hr>
                                             <div class="row p-t-20">
                                                 <div class="col-md-6">
                                                     <label >Personal</label>
-                                                    <div class="input-group mb-3">
-                                                        <input type="text" disabled="5" id="txt_color_Animal" class="form-control" placeholder="Personal" aria-label="" aria-describedby="basic-addon1">
-                                                        <input class="form-control"  type="hidden" id="txtidColor
-                                                               _Animal">
-                                                        <div class="input-group-append">
-                                                            <button class="btn" style="background-color: #14A3E7;color: #ffffff" data-toggle="modal" data-toggle="modal" data-target="#ModalSeleccionarPersonal" type="button">Seleccionar personal</button>
+                                                    <?php if (isset($_GET["id"])) { ?>
+                                                        <input type="hidden"  name="id" value="<?php echo $_GET["id"]; ?>">
+                                                    <?php } ?>
+
+                                                    <?php if (isset($_GET["id"])) { ?>   
+                                                        <div class="input-group mb-3">
+                                                            <input readonly=""  type="text" disabled="5" value="<?php echo $nombrePersonal ?>" id="txtNombrePersonal" class="form-control" placeholder="Personal" aria-label="" aria-describedby="basic-addon1">
+                                                            <input class="form-control" value="<?php echo $idPersonal ?>"  name="id_Personal"  type="hidden" id="txtidPersonal">
+                                                            <div class="input-group-append">
+                                                                <button class="btn" disabled="" style="background-color: #14A3E7;color: #ffffff" data-toggle="modal" data-toggle="modal" data-target="#ModalSeleccionarPersonal" type="button">Seleccionar personal</button>
+                                                            </div>
                                                         </div>
-                                                    </div>
+
+                                                    <?php } else { ?>
+                                                        <div class="input-group mb-3">
+                                                            <input readonly=""  type="text" disabled="5"  id="txtNombrePersonal" class="form-control" placeholder="Personal" aria-label="" aria-describedby="basic-addon1">
+                                                            <input class="form-control"   name="id_Personal"  type="hidden" id="txtidPersonal">
+                                                            <div class="input-group-append">
+                                                                <button class="btn" style="background-color: #14A3E7;color: #ffffff" data-toggle="modal" data-toggle="modal" data-target="#ModalSeleccionarPersonal" type="button">Seleccionar personal</button>
+                                                            </div>
+                                                        </div>
+                                                    <?php } ?>
+
                                                 </div>
                                                 <!--/span-->
                                                 <div class="col-md-6">
-
                                                     <label >Paciente</label>
-                                                    <div class="input-group mb-3">
-                                                        <input type="text" required  disabled="5" id="txt_color_Animal" class="form-control" placeholder="Paciente" aria-label="" aria-describedby="basic-addon1">
-                                                        <input class="form-control" required  type="hidden" id="txtidColor
-                                                               _Animal">
-                                                        <div class="input-group-append">
-                                                            <button required class="btn" style="background-color: #14A3E7;color: #ffffff" data-toggle="modal" data-toggle="modal" data-target="#ModalSeleccionarPaciente" type="button">Seleccionar paciente</button>
-                                                        </div>
-                                                    </div>
+                                                    <?php if (isset($_GET["id"])) { ?>
 
+                                                        <div class="input-group mb-3">
+                                                            <input type="text" required value="<?php echo $nombrePaciente ?>" disabled="5" id="txtNombrePaciente" class="form-control" placeholder="Paciente" aria-label="" aria-describedby="basic-addon1">
+                                                            <input class="form-control" value="<?php echo $idPaciente ?>" required  name="id_Paciente" type="hidden" id="txtidPaciente">
+                                                            <div class="input-group-append">
+                                                                <button disabled=""  required class="btn" style="background-color: #14A3E7;color: #ffffff" data-toggle="modal" data-toggle="modal" data-target="#ModalSeleccionarPaciente" type="button">Seleccionar paciente</button>
+                                                            </div>
+                                                        </div>
+                                                    <?php } else { ?>
+                                                        <div class="input-group mb-3">
+                                                            <input readonly="" type="text" required  disabled="5" id="txtNombrePaciente" class="form-control" placeholder="Paciente" aria-label="" aria-describedby="basic-addon1">
+                                                            <input class="form-control" required  name="id_Paciente" type="hidden" id="txtidPaciente">
+                                                            <div class="input-group-append">
+                                                                <button required class="btn" style="background-color: #14A3E7;color: #ffffff" data-toggle="modal" data-toggle="modal" data-target="#ModalSeleccionarPaciente" type="button">Seleccionar paciente</button>
+                                                            </div>
+                                                        </div>
+
+                                                    <?php } ?>
                                                 </div>
                                                 <!--/span-->
                                             </div>
@@ -434,9 +486,9 @@
                                                         <label class="control-label">Fecha de cita</label>
 
                                                         <?php if (isset($_GET["id"])) { ?>
-                                                            <input type="date" required   name="fecha_nacimiento" value="<?php echo $fecha_nacimiento; ?>" class="form-control" placeholder="dd/mm/yyyy">
+                                                            <input type="date" required readonly=""   name="fecha" value="<?php echo $fechaCita; ?>" class="form-control">
                                                         <?php } else { ?>
-                                                            <input type="date" required   name="fecha_nacimiento" class="form-control" placeholder="dd/mm/yyyy">
+                                                            <input type="date" required   name="fecha" class="form-control" placeholder="dd/mm/yyyy">
                                                         <?php } ?>
                                                     </div>
                                                 </div>
@@ -464,39 +516,39 @@
 
                                                                 <?php if ($estado === "Atendido") { ?>
                                                                     <option value="">--Seleccione--</option>
-                                                                    <option selected="">Atendido</option>
-                                                                    <option>En Servicio</option>
-                                                                    <option>No Atendido</option>
-                                                                    <option>Asignado</option>
-                                                                    <option>Anulada</option>
+                                                                    <option value="Atendido" selected="">Atendido</option>
+                                                                    <option value="En servicio">En Servicio</option>
+                                                                    <option value="No Atendido">No Atendido</option>
+                                                                    <option value="Asignado">Asignado</option>
+                                                                    <option value="Anulada">Anulada</option>
                                                                 <?php } else if ($estado === "En Servicio") { ?>
                                                                     <option value="">--Seleccione--</option>
-                                                                    <option >Atendido</option>
+                                                                    <option value="Atendido"  >Atendido</option>
                                                                     <option selected="">En Servicio</option>
-                                                                    <option>No Atendido</option>
-                                                                    <option>Asignado</option>
-                                                                    <option>Anulada</option>
+                                                                    <option value="No Atendido">No Atendido</option>
+                                                                    <option value="Asignado">Asignado</option>
+                                                                    <option value="Anulada">Anulada</option>
                                                                 <?php } else if ($estado === "No Atendido") { ?>
-                                                                    <option value="">--Seleccione--</option>
-                                                                    <option >Atendido</option>
-                                                                    <option >En Servicio</option>
-                                                                    <option selected="">No Atendido</option>
-                                                                    <option>Asignado</option>
-                                                                    <option>Anulada</option>
+                                                                    <option    value="">--Seleccione--</option>
+                                                                    <option value="No Atendido">Atendido</option>
+                                                                    <option value="En servicio">En Servicio</option>
+                                                                    <option value="No Atendido" selected="">No Atendido</option>
+                                                                    <option value="Asignado">Asignado</option>
+                                                                    <option value="Anulada">Anulada</option>
                                                                 <?php } else if ($estado === "Asignado") { ?>
-                                                                    <option value="">--Seleccione--</option>
-                                                                    <option >Atendido</option>
-                                                                    <option >En Servicio</option>
-                                                                    <option >No Atendido</option>
-                                                                    <option selected="">Asignado</option>
-                                                                    <option>Anulada</option>
+                                                                    <option   value="">--Seleccione--</option>
+                                                                    <option value="Atendido">Atendido</option>
+                                                                    <option value="En servicio">En Servicio</option>
+                                                                    <option value="No Atendido">No Atendido</option>
+                                                                    <option value="Asignado" selected="">Asignado</option>
+                                                                    <option value="Anulada">Anulada</option>
                                                                 <?php } else { ?>
-                                                                    <option value="">--Seleccione--</option>
-                                                                    <option >Atendido</option>
-                                                                    <option >En Servicio</option>
-                                                                    <option >No Atendido</option>
-                                                                    <option >Asignado</option>
-                                                                    <option selected="">Anulada</option>
+                                                                    <option  value="">--Seleccione--</option>
+                                                                    <option value="Atendido">Atendido</option>
+                                                                    <option value="En servicio">En Servicio</option>
+                                                                    <option value="No Atendido">No Atendido</option>
+                                                                    <option value="Asignado" >Asignado</option>
+                                                                    <option value="Anulada" selected="">Anulada</option>
                                                                 <?php } ?>
                                                             </select>
                                                         <?php } ?>
@@ -539,7 +591,7 @@
                                                         <th style="background-color: #14A3E7;font-weight: bolder;color: white;text-align: center;border: white solid 1px;font-size:18px">ID</th>
                                                         <th style="background-color: #14A3E7;font-weight: bolder;color: white;text-align: center;border: white solid 1px;font-size:18px">Nombre</th>
                                                         <th style="background-color: #14A3E7;font-weight: bolder;color: white;text-align: center;border: white solid 1px;font-size:18px">Apellido</th>
-                                                        <th style="background-color: #14A3E7E;font-weight: bolder;color: white;text-align: center;border: white solid 1px;font-size:18px">Seleccionar</th>
+                                                        <th style="background-color: #14A3E7;font-weight: bolder;color: white;text-align: center;border: white solid 1px;font-size:18px">Seleccionar</th>
                                                         </thead>
                                                         <tbody id="Cuerpo_Tabla_Color_Modal">
                                                             <?php
@@ -555,8 +607,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="modal fade bd-example-modal-xl" id="ModalSeleccionarPersonal" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-xl">
+                                <div class="modal fade bd-example-modal-lg" id="ModalSeleccionarPersonal" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h4 class="modal-title" id="myLargeModalLabel">Seleccione el personal</h4>
@@ -564,16 +616,16 @@
                                             </div>
                                             <div class="modal-body">
                                                 <div class="row justify-content-center"><h4 style="font-weight: bold;color: #34338E">Lista de Personal</h4></div>
-                                                <div class="table-responsive-xl">
+                                                <div class="table-responsive-lg">
                                                     <table style="width: 100%" id="Tabla-Color"class="table table">
                                                         <thead>
                                                         <th style="background-color: #14A3E7;font-weight: bolder;color: white;text-align: center;border: white solid 1px;font-size:18px">ID</th>
                                                         <th style="background-color: #14A3E7;font-weight: bolder;color: white;text-align: center;border: white solid 1px;font-size:18px">Nombre</th>
                                                         <th style="background-color: #14A3E7;font-weight: bolder;color: white;text-align: center;border: white solid 1px;font-size:18px">Tipo</th>
                                                         <th style="background-color: #14A3E7;font-weight: bolder;color: white;text-align: center;border: white solid 1px;font-size:18px">Estado</th>
-                                                        <th style="background-color: #14A3E7E;font-weight: bolder;color: white;text-align: center;border: white solid 1px;font-size:18px">Seleccionar</th>
+                                                        <th style="background-color: #14A3E7;font-weight: bolder;color: white;text-align: center;border: white solid 1px;font-size:18px">Seleccionar</th>
                                                         </thead>
-                                                        <tbody id="Cuerpo_Tabla_Color_Modal">
+                                                        <tbody id="Cuerpo_Tabla_personal_Modal">
                                                             <?php
                                                             include '../controlador/modal-citas-personal.php';
                                                             ?>
@@ -658,10 +710,17 @@
     <script src="../assets/node_modules/sparkline/jquery.sparkline.min.js"></script>
     <!--Custom JavaScript -->
     <script src="js/custom.min.js"></script>
+    <script src="../assets/node_modules/toast-master/js/jquery.toast.js"></script>
+    <script src="js/toastr.js"></script>
     <!-- ============================================================== -->
     <!-- Style switcher -->
     <!-- ============================================================== -->
     <script src="../assets/node_modules/styleswitcher/jQuery.style.switcher.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="js/jquery.validate.js"></script>
+    <script src="js/localization/messages_es.min.js"></script>
+    <script src="js/jquery.serializejson.js"></script>
+    <script src="js/funciones/form-citas.js"></script>
 </body>
 
 </html>

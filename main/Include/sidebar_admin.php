@@ -24,7 +24,7 @@
                                
                             </ul>
                         </li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="icon-Receipt-4"></i><span class="hide-menu">Personal</span></a>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="icon-Receipt-2"></i><span class="hide-menu">Personal</span></a>
                             <ul aria-expanded="false" class="collapse">
                 
                                 <li><a href="form-personal.php">Registrar</a></li>

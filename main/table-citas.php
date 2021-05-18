@@ -79,9 +79,9 @@
                             <!--End Logo icon -->
                             <!-- Logo text --><span>
                                 <!-- dark Logo text -->
-                                <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                                <img src="../assets/images/logoimg.PNG.png" alt="homepage" class="dark-logo" />
                                 <!-- Light Logo text -->    
-                                <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
+                                <img src="../assets/images/logoletra.PNG.png" class="light-logo" alt="homepage" /></span> </a>
                     </div>
                     <!-- ============================================================== -->
                     <!-- End Logo -->
@@ -369,74 +369,23 @@
                             <div class="card">
                                 <div class="card-body">
 
-                                    <table id="demo-foo-addrow2" class="table table-bordered table-hover toggle-circle" data-page-size="7">
+                                    <table id="tabla-citas" class="table table-bordered table-hover toggle-circle" data-page-size="7">
                                         <thead>
                                             <tr>
+                                                <th data-sort-initial="true" data-toggle="true">Id</th>
                                                 <th data-sort-initial="true" data-toggle="true">Personal</th>
-                                                <th data-hide="phone, tablet">Tipo</th>
-                                                <th data-hide="phone, tablet">Paciente</th>
+                                                <th>Tipo</th>
+                                                <th >Paciente</th>
                                                 <th data-hide="phone, tablet">Fecha</th>
                                                 <th data-hide="phone, tablet">Estado</th>
-                                                <th data-sort-ignore="true" class="min-width">Delete</th>
+                                                <th data-sort-ignore="true" class="min-width">Acciòn</th>
                                             </tr>
                                         </thead>
-                                        <div class="m-t-40">
-                                            <div class="d-flex">
-                                                <div class="mr-auto">
-                                                    <div class="form-group">
-                                                        <button id="demo-btn-addrow" class="btn btn-primary btn-sm"><i class="icon wb-plus" aria-hidden="true"></i>Add New Row
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                                <div class="ml-auto">
-                                                    <div class="form-group">
-                                                        <input id="demo-input-search2" type="text" placeholder="Search" autocomplete="off">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                         <tbody>
-                                            <tr>
-                                                <td>Shona</td>
-                                                <td>Woldt</td>
-                                                <td>Airline Transport Pilot</td>
-                                                <td>3 Oct 2017</td>
-                                                <td><span class="label label-table label-success">Active</span> </td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Lizzee</td>
-                                                <td>Goodlow</td>
-                                                <td>Technical Services Librarian</td>
-                                                <td>1 Nov 2014</td>
-                                                <td><span class="label label-table label-danger">Suspended</span> </td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Isidra</td>
-                                                <td>Boudreaux</td>
-                                                <td>Traffic Court Referee</td>
-                                                <td>22 Jun 2014</td>
-                                                <td><span class="label label-table label-success">Active</span> </td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Doris</td>
-                                                <td>Michael</td>
-                                                <td>Business Services Sales Representative</td>
-                                                <td>19 Apr 2013</td>
-                                                <td><span class="label label-table label-danger">Suspended</span> </td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
 
+                                            <?php
+                                            include '../controlador/list-citas.php';
+                                            ?>
 
 
                                         </tbody>
@@ -462,56 +411,7 @@
                     <!-- Right sidebar -->
                     <!-- ============================================================== -->
                     <!-- .right-sidebar -->
-                    <div class="right-sidebar">
-                        <div class="slimscrollright">
-                            <div class="rpanel-title"> Service Panel <span><i class="ti-close right-side-toggle"></i></span> </div>
-                            <div class="r-panel-body">
-                                <ul id="themecolors" class="m-t-20">
-                                    <li><b>With Light sidebar</b></li>
-                                    <li><a href="javascript:void(0)" data-theme="default" class="default-theme">1</a></li>
-                                    <li><a href="javascript:void(0)" data-theme="green" class="green-theme">2</a></li>
-                                    <li><a href="javascript:void(0)" data-theme="red" class="red-theme">3</a></li>
-                                    <li><a href="javascript:void(0)" data-theme="blue" class="blue-theme">4</a></li>
-                                    <li><a href="javascript:void(0)" data-theme="purple" class="purple-theme">5</a></li>
-                                    <li><a href="javascript:void(0)" data-theme="megna" class="megna-theme">6</a></li>
-                                    <li class="d-block m-t-30"><b>With Dark sidebar</b></li>
-                                    <li><a href="javascript:void(0)" data-theme="default-dark" class="default-dark-theme working">7</a></li>
-                                    <li><a href="javascript:void(0)" data-theme="green-dark" class="green-dark-theme">8</a></li>
-                                    <li><a href="javascript:void(0)" data-theme="red-dark" class="red-dark-theme">9</a></li>
-                                    <li><a href="javascript:void(0)" data-theme="blue-dark" class="blue-dark-theme">10</a></li>
-                                    <li><a href="javascript:void(0)" data-theme="purple-dark" class="purple-dark-theme">11</a></li>
-                                    <li><a href="javascript:void(0)" data-theme="megna-dark" class="megna-dark-theme ">12</a></li>
-                                </ul>
-                                <ul class="m-t-20 chatonline">
-                                    <li><b>Chat option</b></li>
-                                    <li>
-                                        <a href="javascript:void(0)"><img src="../assets/images/users/1.jpg" alt="user-img" class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)"><img src="../assets/images/users/2.jpg" alt="user-img" class="img-circle"> <span>Genelia Deshmukh <small class="text-warning">Away</small></span></a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)"><img src="../assets/images/users/3.jpg" alt="user-img" class="img-circle"> <span>Ritesh Deshmukh <small class="text-danger">Busy</small></span></a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)"><img src="../assets/images/users/4.jpg" alt="user-img" class="img-circle"> <span>Arijit Sinh <small class="text-muted">Offline</small></span></a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)"><img src="../assets/images/users/5.jpg" alt="user-img" class="img-circle"> <span>Govinda Star <small class="text-success">online</small></span></a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)"><img src="../assets/images/users/6.jpg" alt="user-img" class="img-circle"> <span>John Abraham<small class="text-success">online</small></span></a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)"><img src="../assets/images/users/7.jpg" alt="user-img" class="img-circle"> <span>Hritik Roshan<small class="text-success">online</small></span></a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)"><img src="../assets/images/users/8.jpg" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="text-success">online</small></span></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+
                     <!-- ============================================================== -->
                     <!-- End Right sidebar -->
                     <!-- ============================================================== -->
@@ -553,10 +453,41 @@
         <script src="../assets/node_modules/footable/js/footable.all.min.js"></script>
         <!--FooTable init-->
         <script src="js/footable-init.js"></script>
+        <!-- This is data table -->
+        <script src="../assets/node_modules/datatables/jquery.dataTables.min.js"></script>
         <!-- ============================================================== -->
         <!-- Style switcher -->
         <!-- ============================================================== -->
         <script src="../assets/node_modules/styleswitcher/jQuery.style.switcher.js"></script>
+        <script>
+            $('#tabla-citas').DataTable({
+                "lengthMenu": [[15, 25, 50, 100, -1], [15, 25, 50, 100, "Todo"]],
+                language: {
+                    "sProcessing": "Procesando...",
+                    "sLengthMenu": "Mostrar _MENU_ registros",
+                    "sZeroRecords": "No se encontraron resultados",
+                    "sEmptyTable": "Ningún dato disponible en esta tabla",
+                    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Buscar:",
+                    "sUrl": "",
+                    "sInfoThousands": ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sLast": "Último",
+                        "sNext": "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                    },
+                },
+            });
+        </script>
     </body>
 
 </html>
