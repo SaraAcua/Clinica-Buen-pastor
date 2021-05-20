@@ -37,7 +37,7 @@ if ($accion == "RegistrarP") {
     }
 
     echo $json_string;
-} else if("ActualizarP") {
+} else if($accion === "ActualizarP") {
 
     $codigo = $_POST['codigo'];
     $foto = $_POST['foto'];
@@ -63,11 +63,11 @@ if ($accion == "RegistrarP") {
     }
 
     echo $json_string;
-}else{
+}else if ($accion === "EliminarP"){
     
     $codigo = $_POST['codigo'];
     $sql_query = "DELETE FROM personal where codigo = ".$codigo;
-    echo $sql_query;
+    //echo $sql_query;
     $result = mysqli_query($con, $sql_query);
     if($result){
         $data['estado'] = 'success';

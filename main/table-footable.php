@@ -249,7 +249,7 @@
                                     <h4 class="card-title">Pacientes</h4>
                                     <h6 class="card-subtitle"></h6>
                                     <div class="table-responsive ">
-                                        <table  id="tablapacientes" class="table  table-responsive-lg  m-t-30 table-hover contact-list" data-page-size="12">
+                                        <table  id="tablapacientes" class="table  table-responsive-lg  m-t-30 table-hover contact-list">
                                             <thead >
                                                 <tr >
                                                     <th >No</th>
@@ -259,20 +259,20 @@
                                                     <th>F. Nc</th>
                                                     <th>Edad</th>
                                                     <th>Direccion</th>
-                                                     <th>Barrio</th>
+                                                    <th>Barrio</th>
                                                     <th>Ciudad</th>
                                                     <th>Telefono</th>
                                                     <th>Estado</th>
                                                     <th>Acciones</th>
-                                                    
+
                                                 </tr>
                                             </thead>
-                                            
+
                                             <tbody>
-                                                 <?php
-                                                    include '../controlador/list-paciente.php';
-                                                    ?>
-                                                    </tbody>
+                                                <?php
+                                                include '../controlador/list-paciente.php';
+                                                ?>
+                                            </tbody>
                                         </table>
                                     </div>
                                 </div>
@@ -305,10 +305,9 @@
                 <!-- ============================================================== -->
                 <!-- footer -->
                 <!-- ============================================================== -->
-                <?php 
-        
-        include './Include/footer.php';
-        ?>
+                <?php
+                include './Include/footer.php';
+                ?>
                 <!-- ============================================================== -->
                 <!-- End footer -->
                 <!-- ============================================================== -->
@@ -335,17 +334,18 @@
         <script src="js/sidebarmenu.js"></script>
         <!--Custom JavaScript -->
         <script src="js/custom.min.js"></script>
-        <!-- Footable -->
-        <script src="../assets/node_modules/footable/js/footable.all.min.js"></script>
-        <!--FooTable init-->
-        <script src="js/footable-init.js"></script>
         <!-- ============================================================== -->
         <!-- Style switcher -->
         <!-- ============================================================== -->
         <script src="../assets/node_modules/styleswitcher/jQuery.style.switcher.js"></script>
         <!-- This is data table -->
         <script src="../assets/node_modules/datatables/jquery.dataTables.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="js/jquery.validate.js"></script>
+        <script src="js/localization/messages_es.min.js"></script>
+        <script src="js/jquery.serializejson.js"></script>
         <script src="js/funciones/table-paciente.js"></script>
+        <script src="js/funciones/form-paciente.js"></script>
         <script>
             $('#tablapacientes').DataTable({
                 "lengthMenu": [[15, 25, 50, 100, -1], [15, 25, 50, 100, "Todo"]],

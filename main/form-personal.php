@@ -38,7 +38,7 @@
     include '../controlador/confi.php';
     session_start();
 
-    if (isset($_SESSION['Usuario']) ) {
+    if (isset($_SESSION['Usuario']) && $_SESSION['Usuario'] === "admin") {
         if (isset($_GET['id'])) {
             $codigo = $_GET['id'];
 
@@ -656,7 +656,7 @@
     <!-- Style switcher -->
     <!-- ============================================================== -->
     <script src="../assets/node_modules/styleswitcher/jQuery.style.switcher.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="js/jquery.validate.js"></script>
     <script src="js/localization/messages_es.min.js"></script>
     <script src="js/jquery.serializejson.js"></script>

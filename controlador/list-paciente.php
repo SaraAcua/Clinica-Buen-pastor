@@ -19,7 +19,7 @@ if ($inc) {
             $estado = $row['estado'];
             ?>
             <tr>
-                <td><?php echo $codigo ?></td>
+                <td class="idPaciente"><?php echo $codigo ?></td>
                 <td><img src="<?php echo $foto ?>" height="64px" width="64px" class="rounded-circle" /></td>
                 <td><?php echo $nombre ?></td>
                 <td><?php echo $apellido ?></td>

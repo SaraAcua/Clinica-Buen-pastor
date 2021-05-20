@@ -115,13 +115,37 @@ $(document).ready(function () {
         }).then((willDelete) => {
             if (willDelete) {
                  $(this).parents("tr").find("td").each(function () {
-                     if($(this).hasClass("id_paciente")){
+                     if($(this).hasClass("idPaciente")){
                          id = $(this).text();
                      }                    
                 });
-                console.log(id);
+              console.log(id);
                 var formData = new FormData();
                 formData.append("accion", "EliminarP");
+                formData.append("codigo", id);
+
+                $.ajax({
+                    data: formData,
+                    url: '../controlador/pacientes.php',
+                    type: 'POST',
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+                    beforeSend: function () {
+
+                    },
+                    success: function (data) {
+                        var json = JSON.parse(data);
+                        if(json.estado === "success"){
+                            window.location.replace("table-footable.php");
+                        }else{
+                             swal("Se produjo un error", "No se puede eliminar al paciente, tiene citas asignadas", "error");
+                        }
+                    }, error: function (data) {
+                        swal("Se produjo un error", "", "error");
+                    }
+                });
+
             } else {
                 console.log("No entro");
             }
@@ -134,6 +158,3 @@ $(document).ready(function () {
 
 
 });
-
-
-

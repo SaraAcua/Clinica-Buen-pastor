@@ -8,7 +8,6 @@ $data = array();
 $accion = $_POST['accion'];
 $count = 0;
 $json_string = "";
-echo $accion;
 if ($accion == "Registrar") {
     
     
@@ -41,7 +40,7 @@ if ($accion == "Registrar") {
     }
 
     echo $json_string;
-} else if("Actualizar") {
+} else if($accion === "Actualizar") {
 
     $codigo = $_POST['codigo'];
     $nombre = $_POST['nombre'];
@@ -72,11 +71,10 @@ if ($accion == "Registrar") {
     }
 
     echo $json_string;
-}else{
+}else if($accion === "EliminarP"){
     
     $codigo = $_POST['codigo'];
     $sql_query = "DELETE FROM pacientes where codigo = ".$codigo;
-    echo $sql_query;
     $result = mysqli_query($con, $sql_query);
     if($result){
         $data['estado'] = 'success';

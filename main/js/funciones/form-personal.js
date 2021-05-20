@@ -7,8 +7,6 @@
 
 $(document).ready(function () {
 
-
-
     disablePreloader();
 
     $("#form-persona").validate({
@@ -106,6 +104,33 @@ $(document).ready(function () {
                 console.log(id);
                 var formData = new FormData();
                 formData.append("accion", "EliminarP");
+                formData.append("codigo", id);
+
+                $.ajax({
+                    data: formData,
+                    url: '../controlador/personal.php',
+                    type: 'POST',
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+                    dataType: 'json',
+                    beforeSend: function () {
+
+                    },
+                    success: function (data) {
+                        
+                        console.log(data);
+                        if(data.estado === "success"){
+                            window.location.replace("table-personal.php");
+                        }else{
+                            swal("Se produjo un error", "El personal tiene asignada citas, no es posible eliminarlo", "error");
+                        }
+                        
+                    }, error: function (data) {
+                        swal("Se produjo un error", data, "error");
+                    }
+                });
+
             } else {
                 console.log("No entro");
             }

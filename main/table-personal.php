@@ -251,7 +251,7 @@
                                     <h4 class="card-title">Personal</h4>
                                     <h6 class="card-subtitle"></h6>
                                     <div class="table-responsive">
-                                        <table id="tablapersonal" class="table m-t-30 table-hover contact-list" data-page-size="12">
+                                        <table id="tablapersonal" class="table m-t-30 table-hover contact-list">
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
@@ -270,19 +270,6 @@
                                                 include '../controlador/list-personal.php';
                                                 ?>
                                             </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <td colspan="2">
-                                                        <button type="button" class="btn btn-info btn-rounded" data-toggle="modal" data-target="#add-contact">Add Nuevo personal</button>
-                                                    </td>
-
-                                                    <td colspan="7">
-                                                        <div class="text-right">
-                                                            <ul class="pagination"> </ul>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </tfoot>
                                         </table>
                                     </div>
                                 </div>
@@ -346,11 +333,6 @@
         <script src="js/sidebarmenu.js"></script>
         <!--Custom JavaScript -->
         <script src="js/custom.min.js"></script>
-        <!-- Footable -->
-        <script src="../assets/node_modules/footable/js/footable.all.min.js"></script>
-        <!--FooTable init-->
-
-        <script src="js/footable-init.js"></script>
         <!-- ============================================================== -->
         <!-- Style switcher -->
         <script src="../assets/node_modules/datatables/jquery.dataTables.min.js"></script>
